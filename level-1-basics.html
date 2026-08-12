@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level 1 · Your first repository — Git-Fast-Learning</title>
+<meta name="description" content="Level 1: Repositories, staging area, commits, and reading history with git log.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar"></header>
+
+<main class="wrap">
+  <div class="level-layout">
+
+    <div class="brief">
+
+      <div class="stack">
+        <p class="eyebrow">Level 1 &middot; Beginner</p>
+        <h1>Your first repository</h1>
+        <p style="color:var(--muted)">
+          Real-world developer scenarios: Project setup, staging, snapshots, and history.
+        </p>
+        <div class="meter"><i id="level-meter" style="width:0%"></i></div>
+        <p class="eyebrow"><span id="level-count">0 / 10</span> tasks &middot; <span id="level-total">10</span> total</p>
+      </div>
+
+      <!-- Git Cat Mascot Guide -->
+      <div id="cat-guide-host"></div>
+
+      <!-- Live Repository Graph & Working Directory Explorer Container (Below Git Cat) -->
+      <div id="repo-side-host" class="stack" style="margin-bottom:1rem"></div>
+
+      <!-- What to Ask AI Helper Callout -->
+      <div class="note tip" style="margin-bottom:1rem">
+        <span class="tag">🤖 Ask AI Tutor</span>
+        <p>Confused by any concept? Following are questions — copy and ask AI if you don't understand!</p>
+        <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.4rem">
+          <button type="button" class="copy-btn" data-copy="Why does Git require two steps: git add AND git commit? What is the purpose of Staging?">Copy: Why 2 steps add/commit? 📋</button>
+          <button type="button" class="copy-btn" data-copy="What is the difference between Working Directory, Staging Area, and Repository?">Copy: Explain 3 Git States 📋</button>
+          <a class="copy-btn" style="text-decoration:none;color:var(--accent)" href="ask-ai.html">View All 50 Questions ➔</a>
+        </div>
+      </div>
+
+      <!-- Animated 3-State Pipeline Diagram -->
+      <section class="panel lesson">
+        <h3>The 3-State File Pipeline</h3>
+        <div class="pipeline-diagram">
+          <div class="flow-card wd">
+            <span class="icon">📄</span>
+            <h4>1. Working Directory</h4>
+            <p>Your local disk edits. Git watches, but does not record changes yet.</p>
+          </div>
+          <div class="flow-arrow">
+            <span class="arr">➔</span>
+            <code>git add</code>
+          </div>
+          <div class="flow-card sa">
+            <span class="icon">⚡</span>
+            <h4>2. Staging Area</h4>
+            <p>A holding pen for changes chosen for the next snapshot.</p>
+          </div>
+          <div class="flow-arrow">
+            <span class="arr">➔</span>
+            <code>git commit</code>
+          </div>
+          <div class="flow-card repo">
+            <span class="icon">📦</span>
+            <h4>3. Repository</h4>
+            <p>Permanent snapshot record with parent pointers and SHA IDs.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="done-banner" id="done-banner">
+        <h3>Level 1 complete</h3>
+        <p>You can create a repository, stage deliberately, commit, and read history.
+           Next: what happens when you need two versions of the truth at once.</p>
+        <div><a class="btn" id="next-level" href="level-2-branching.html">Go to level 2 &rarr;</a></div>
+      </div>
+
+      <section class="panel lesson">
+        <h3>If you get stuck</h3>
+        <p class="muted">
+          Type <code>help</code> in the terminal for the list of commands the simulator understands.
+          <code>git status</code> is never the wrong thing to run — when you are lost, run it and
+          read the hints git gives you. Real git is unusually good at telling you what to do next.
+        </p>
+      </section>
+
+    </div>
+
+    <div class="lab" id="lab"></div>
+  </div>
+
+  <footer class="site">
+    <span>Level 1 of 4</span>
+    <span><a href="index.html">back to the map</a> &middot; <a href="reference.html">reference</a></span>
+  </footer>
+</main>
+
+<script src="js/progress.js"></script>
+<script src="js/git-engine.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/lab.js"></script>
+<script>startLevel(1);</script>
+</body>
+</html>

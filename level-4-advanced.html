@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level 4 · Rewriting and rescuing — Git-Fast-Learning</title>
+<meta name="description" content="Level 4: Advanced Git — stashing, rebasing, amending, reflog rescue, cherry-picking, and reverting.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar"></header>
+
+<main class="wrap">
+  <div class="level-layout">
+
+    <div class="brief">
+
+      <div class="stack">
+        <p class="eyebrow">Level 4 &middot; Advanced</p>
+        <h1>Rewriting, rescuing and undoing</h1>
+        <p style="color:var(--muted)">
+          Commands to rewrite history and pull "lost" commits out of the reflog.
+        </p>
+        <div class="meter"><i id="level-meter" style="width:0%"></i></div>
+        <p class="eyebrow"><span id="level-count">0 / 9</span> tasks &middot; <span id="level-total">9</span> total</p>
+      </div>
+
+      <!-- Git Cat Mascot Guide -->
+      <div id="cat-guide-host"></div>
+
+      <!-- Live Repository Graph & Working Directory Explorer Container (Below Git Cat) -->
+      <div id="repo-side-host" class="stack" style="margin-bottom:1rem"></div>
+
+      <!-- Rescue & Rewrite Flow Diagram -->
+      <section class="panel lesson">
+        <h3>History Rewriting &amp; Reflog Rescue</h3>
+        <div class="pipeline-diagram">
+          <div class="flow-card wd">
+            <span class="icon">📦</span>
+            <h4>Rebase Linear Line</h4>
+            <p><code>git rebase main</code> replays commits onto main for a straight line.</p>
+          </div>
+          <div class="flow-arrow">
+            <span class="arr">➔</span>
+            <code>git reflog</code>
+          </div>
+          <div class="flow-card sa">
+            <span class="icon">🛟</span>
+            <h4>Reflog Safety Net</h4>
+            <p>Logs every HEAD movement. Find your lost commit SHA anytime!</p>
+          </div>
+          <div class="flow-arrow">
+            <span class="arr">➔</span>
+            <code>checkout -b</code>
+          </div>
+          <div class="flow-card repo">
+            <span class="icon">🐱</span>
+            <h4>Rescue Branch</h4>
+            <p><code>git checkout -b rescue &lt;sha&gt;</code> pulls any unlinked commit back.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="done-banner" id="done-banner">
+        <h3>All four levels complete</h3>
+        <p>You have stashed, rebased, amended, thrown a commit away, pulled it back out of the
+           reflog, cherry-picked and reverted. There is very little left that can genuinely
+           frighten you.</p>
+        <div><a class="btn" id="next-level" href="reference.html">Keep the reference &rarr;</a></div>
+      </div>
+
+    </div>
+
+    <div class="lab" id="lab"></div>
+  </div>
+
+  <footer class="site">
+    <span>Level 4 of 4</span>
+    <span><a href="index.html">back to the map</a> &middot; <a href="reference.html">reference</a></span>
+  </footer>
+</main>
+
+<script src="js/progress.js"></script>
+<script src="js/git-engine.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/lab.js"></script>
+<script>startLevel(4);</script>
+</body>
+</html>

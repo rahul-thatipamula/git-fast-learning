@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Shot 🎯 — Git-Fast-Learning</title>
+  <meta name="description" content="A single continuous visual storyline connecting every stage of Git from day 1 initialization to team collaboration, merge conflicts, and reflog rescues.">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar"></header>
+
+<main class="wrap">
+
+  <section class="hero" style="padding-bottom:1.5rem; margin-bottom:1.5rem;">
+    <p class="eyebrow">Interactive Lifecycle Narrative</p>
+    <h1>One Shot 🎯 Git Story</h1>
+    <p class="lede">
+      Follow a single continuous top-to-bottom storyline connecting every phase of Git — from your first <code>mkdir</code> and <code>git init</code> to multi-developer team collaboration, merge conflict resolution, and reflog rescues!
+    </p>
+
+    <!-- Git Cat Mascot Tutor Banner -->
+    <div class="cat-guide-box pop-in" style="max-width:44rem; margin: .5rem 0;">
+      <div class="git-cat-avatar mood-happy" role="img" aria-label="Git Cat Mascot">
+        <div class="cat-ears"><span class="ear ear-l"></span><span class="ear ear-r"></span></div>
+        <div class="cat-face">
+          <div class="cat-eyes"><span class="eye">•</span><span class="eye">•</span></div>
+          <div class="cat-whiskers"><span class="w-l"></span><span class="w-r"></span></div>
+          <div class="cat-nose">^</div>
+        </div>
+        <div class="cat-tail"></div>
+      </div>
+      <div class="cat-speech-bubble">
+        <span class="cat-name">Git Cat 🐱</span>
+        <p>Meow! Welcome to the complete Git story. Read through step-by-step or click any chapter card to highlight the exact commands and visual concepts!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Connected Top-to-Bottom Story Timeline -->
+  <section class="stack-lg">
+    <div class="story-timeline-wrap">
+      <div class="story-timeline-line"></div>
+
+      <!-- CHAPTER 1 -->
+      <div class="story-node" id="step-1">
+        <div class="story-node-icon">⚡</div>
+        <div class="story-card active-step">
+          <div class="story-step-head">
+            <span class="story-step-tag">Chapter 1 &middot; Day 1</span>
+            <span class="story-step-title">Creating the Project &amp; Initializing Git</span>
+          </div>
+          <p class="story-narrative-p">
+            You open your terminal to start a brand new project. You create a folder <code>my-app</code> and run <code>git init</code>. Git creates a hidden <code>.git</code> directory inside your folder. This hidden folder is Git's brain — it stores every snapshot, commit pointer, and branch configuration locally on your computer.
+          </p>
+          <div class="story-code-box">
+            <span class="cmt"># Create project folder and step inside</span>
+            <span class="cmd">mkdir my-app &amp;&amp; cd my-app</span>
+            <span class="cmt"># Initialize Git repository</span>
+            <span class="cmd">git init</span>
+          </div>
+          <div class="cat-speech-bubble" style="background:var(--accent-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--accent-line)">
+            <span class="cat-name" style="font-size:11px">Git Cat Tip 🐱</span>
+            <p style="font-size:12px;margin:0">Running <code>git init</code> turns a plain directory into a Git repository. Everything remains 100% local on your hard drive!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHAPTER 2 -->
+      <div class="story-node" id="step-2">
+        <div class="story-node-icon">📦</div>
+        <div class="story-card">
+          <div class="story-step-head">
+            <span class="story-step-tag">Chapter 2 &middot; Staging</span>
+            <span class="story-step-title">Creating Files &amp; The 3-State Staging Pipeline</span>
+          </div>
+          <p class="story-narrative-p">
+            You write code in <code>README.md</code> and <code>notes.md</code>. When you type <code>git status</code>, Git highlights these files in red as <b>UNTRACKED</b>. To include them in your next snapshot, you run <code>git add .</code> to stage them into the Index. Finally, you run <code>git commit -m "Initial commit"</code> to permanently freeze your first snapshot in history!
+          </p>
+          <div class="story-code-box">
+            <span class="cmt"># Check working tree status</span>
+            <span class="cmd">git status</span>
+            <span class="cmt"># Stage all modified and untracked files</span>
+            <span class="cmd">git add .</span>
+            <span class="cmt"># Freeze staged changes as a permanent snapshot commit</span>
+            <span class="cmd">git commit -m "Initial project structure"</span>
+          </div>
+          <div class="cat-speech-bubble" style="background:var(--ok-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--ok)">
+            <span class="cat-name" style="font-size:11px;color:var(--ok)">Staging Pipeline ⚡</span>
+            <p style="font-size:12px;margin:0"><b>Working Directory</b> ➔ <code>git add</code> ➔ <b>Staging Area (Index)</b> ➔ <code>git commit</code> ➔ <b>Repository Graph</b>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHAPTER 3 -->
+      <div class="story-node" id="step-3">
+        <div class="story-node-icon">🔀</div>
+        <div class="story-card">
+          <div class="story-step-head">
+            <span class="story-step-tag">Chapter 3 &middot; Branching</span>
+            <span class="story-step-title">Feature Isolation with Lightweight Branches</span>
+          </div>
+          <p class="story-narrative-p">
+            You need to build a new login feature. Instead of risking breaking your stable <code>main</code> branch, you run <code>git checkout -b feature-login</code>. In Git, a branch is not a full directory copy — it is simply a 40-character pointer pointing to your current commit! You make changes, test freely, and commit safely without affecting <code>main</code>.
+          </p>
+          <div class="story-code-box">
+            <span class="cmt"># Create new branch and switch HEAD pointer to it</span>
+            <span class="cmd">git checkout -b feature-login</span>
+            <span class="cmt"># Commit changes isolated on the branch</span>
+            <span class="cmd">git commit -m "Build user login form"</span>
+          </div>
+          <div class="cat-speech-bubble" style="background:var(--accent-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--accent-line)">
+            <span class="cat-name" style="font-size:11px">HEAD Pointer 📍</span>
+            <p style="font-size:12px;margin:0"><code>HEAD</code> points to the branch you are currently standing on. Switching branches moves <code>HEAD</code> and updates your working disk files instantly.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHAPTER 4 -->
+      <div class="story-node" id="step-4">
+        <div class="story-node-icon">🌐</div>
+        <div class="story-card">
+          <div class="story-step-head">
+            <span class="story-step-tag">Chapter 4 &middot; Collaboration</span>
+            <span class="story-step-title">Multi-Developer Sync &amp; GitHub Remotes</span>
+          </div>
+          <p class="story-narrative-p">
+            Your project goes open-source on GitHub! You publish your feature branch using <code>git push -u origin feature-login</code> and open a Pull Request. Meanwhile, another developer merges code into the canonical <code>upstream/main</code> repo. To update your local machine safely, you run <code>git fetch upstream</code> and <code>git merge --ff-only upstream/main</code>.
+          </p>
+          <div class="story-code-box">
+            <span class="cmt"># Push branch to your GitHub fork</span>
+            <span class="cmd">git push -u origin feature-login</span>
+            <span class="cmt"># Fetch latest commits from upstream maintainer</span>
+            <span class="cmd">git fetch upstream</span>
+            <span class="cmt"># Safely fast-forward local main</span>
+            <span class="cmd">git merge --ff-only upstream/main</span>
+          </div>
+          <div class="cat-speech-bubble" style="background:var(--accent-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--accent-line)">
+            <span class="cat-name" style="font-size:11px">3-Copy Model 🏛️</span>
+            <p style="font-size:12px;margin:0"><b>Upstream</b> (maintainer) ➔ <code>git fetch</code> ➔ <b>Local</b> (your laptop) ➔ <code>git push</code> ➔ <b>Origin</b> (your GitHub fork).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHAPTER 5 -->
+      <div class="story-node" id="step-5">
+        <div class="story-node-icon">💥</div>
+        <div class="story-card">
+          <div class="story-step-head">
+            <span class="story-step-tag">Chapter 5 &middot; Conflicts</span>
+            <span class="story-step-title">Facing &amp; Resolving Merge Conflicts</span>
+          </div>
+          <p class="story-narrative-p">
+            A teammate edited the exact same line in <code>config.json</code> that you modified on your branch. When you attempt <code>git merge feature-login</code>, Git stops and warns: <code>Merge conflict in config.json</code>. Git places conflict markers in your file: <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. You open the file, delete the conflict markers, keep the combined correct code, stage with <code>git add config.json</code>, and run <code>git commit</code> to seal the 2-parent merge!
+          </p>
+          <div class="story-code-box">
+            <span class="cmt"># Attempt merge — conflict occurs</span>
+            <span class="cmd">git merge feature-login</span>
+            <span class="cmt"># Open file, remove &lt;&lt;&lt;&lt;&lt;&lt;&lt; markers, stage resolved file</span>
+            <span class="cmd">git add config.json</span>
+            <span class="cmt"># Complete merge commit</span>
+            <span class="cmd">git commit</span>
+          </div>
+          <div class="cat-speech-bubble" style="background:var(--warn-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--warn)">
+            <span class="cat-name" style="font-size:11px;color:var(--warn)">No Need to Panic! 🛠️</span>
+            <p style="font-size:12px;margin:0">Merge conflicts are simply Git asking a human to decide between two conflicting edits. If you ever feel lost, run <code>git merge --abort</code> to reset!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHAPTER 6 -->
+      <div class="story-node" id="step-6">
+        <div class="story-node-icon">🛠️</div>
+        <div class="story-card">
+          <div class="story-step-head">
+            <span class="story-step-tag">Chapter 6 &middot; Rescue</span>
+            <span class="story-step-title">Stashing, Rebasing &amp; Reflog Rescues</span>
+          </div>
+          <p class="story-narrative-p">
+            When an urgent bug report arrives while your working tree has uncommitted edits, you run <code>git stash</code> to temporarily shelve your changes, fix the bug, and run <code>git stash pop</code> to restore your work. Later, if you accidentally run <code>git reset --hard</code> and a commit disappears from <code>git log</code>, you run <code>git reflog</code> to find its SHA, and run <code>git checkout -b rescue &lt;sha&gt;</code> to bring your lost commit back to life!
+          </p>
+          <div class="story-code-box">
+            <span class="cmt"># Temporarily shelf uncommitted work</span>
+            <span class="cmd">git stash &amp;&amp; git stash pop</span>
+            <span class="cmt"># View HEAD movement log to locate "lost" commit SHA</span>
+            <span class="cmd">git reflog</span>
+            <span class="cmt"># Rescue lost commit by pointing a new branch at its SHA</span>
+            <span class="cmd">git checkout -b rescue a1b2c3d</span>
+          </div>
+          <div class="cat-speech-bubble" style="background:var(--ok-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--ok)">
+            <span class="cat-name" style="font-size:11px;color:var(--ok)">Git Ninja Master 👑</span>
+            <p style="font-size:12px;margin:0">Congratulations! You now understand that Git is an immutable directed graph where nothing is lost and every state is recoverable!</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site">
+    <span>Git-Fast-Learning &middot; All-in-One Story</span>
+    <span><a href="index.html">back to the map</a> &middot; <a href="level-1-basics.html">start level 1</a></span>
+  </footer>
+
+</main>
+
+<script src="js/progress.js"></script>
+<script>
+(function () {
+  Progress.mountBar('story');
+
+  // Highlight story nodes on click
+  document.querySelectorAll('.story-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      document.querySelectorAll('.story-card').forEach(function (c) { c.classList.remove('active-step'); });
+      card.classList.add('active-step');
+    });
+  });
+})();
+</script>
+</body>
+</html>

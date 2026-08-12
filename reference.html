@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Command Reference — Git-Fast-Learning</title>
+<meta name="description" content="A searchable Git and GitHub command reference sheet with safety guidelines and mental models.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar"></header>
+
+<main class="wrap">
+  
+  <section class="hero" style="padding-bottom:1.5rem; margin-bottom:1.5rem;">
+    <p class="eyebrow">Git &amp; GitHub Cheat Sheet</p>
+    <h1>Command Reference</h1>
+    <p class="lede">
+      Every command supported in Git-Fast-Learning, grouped by workflow. Use the search bar or filter buttons to quickly find what you need.
+    </p>
+
+    <!-- Git Cat Assistant Banner -->
+    <div class="cat-guide-box pop-in" style="max-width:44rem; margin: .5rem 0;">
+      <div class="git-cat-avatar mood-wink" role="img" aria-label="Git Cat Mascot">
+        <div class="cat-ears"><span class="ear ear-l"></span><span class="ear ear-r"></span></div>
+        <div class="cat-face">
+          <div class="cat-eyes"><span class="eye">^</span><span class="eye">•</span></div>
+          <div class="cat-whiskers"><span class="w-l"></span><span class="w-r"></span></div>
+          <div class="cat-nose">^</div>
+        </div>
+        <div class="cat-tail"></div>
+      </div>
+      <div class="cat-speech-bubble">
+        <span class="cat-name">Git Cat 🐱</span>
+        <p>Looking for a specific command? Type in the search box below or click any category pill! You can also click <b>Copy</b> to paste commands right into the simulator!</p>
+      </div>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="ref-controls">
+      <div class="ref-search-wrap">
+        <input type="text" id="ref-search" placeholder="Search commands, flags, or descriptions (e.g. rebase, stash, pr)..." aria-label="Search reference commands" autocomplete="off">
+      </div>
+      <div class="ref-filters" id="ref-filters">
+        <button type="button" class="filter-btn active" data-cat="all">All commands</button>
+        <button type="button" class="filter-btn" data-cat="basics">Basics (L1)</button>
+        <button type="button" class="filter-btn" data-cat="branching">Branching (L2)</button>
+        <button type="button" class="filter-btn" data-cat="github">GitHub &amp; Remotes (L3)</button>
+        <button type="button" class="filter-btn" data-cat="advanced">Undo &amp; Rewriting (L4)</button>
+        <button type="button" class="filter-btn" data-cat="shell">Shell</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack-lg">
+
+    <!-- Command Table -->
+    <div class="table-wrap">
+      <table id="ref-table">
+        <thead>
+          <tr>
+            <th style="width:22%">Command</th>
+            <th style="width:12%">Category</th>
+            <th style="width:14%">Safety Level</th>
+            <th>Description &amp; Usage</th>
+            <th style="width:10%; text-align:right">Action</th>
+          </tr>
+        </thead>
+        <tbody id="ref-tbody">
+
+          <!-- BASICS -->
+          <tr data-cat="basics" data-search="git init initialize create repository">
+            <td class="cmd">git init</td>
+            <td><span class="pill new">Basics</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Initializes a new Git repository in the current directory. Creates the hidden <code>.git</code> folder to track snapshots.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git init">Copy</button></td>
+          </tr>
+          <tr data-cat="basics" data-search="git status check staged untracked working tree">
+            <td class="cmd">git status</td>
+            <td><span class="pill new">Basics</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Shows current branch, untracked files (<code>??</code>), modified files (<code>M</code>), and staged changes (<code>A</code>). Run whenever unsure what to do.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git status">Copy</button></td>
+          </tr>
+          <tr data-cat="basics" data-search="git status -s short compact status code">
+            <td class="cmd">git status -s</td>
+            <td><span class="pill new">Basics</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Prints a compact short status: <code>??</code> untracked, <code> M</code> modified unstaged, <code>M </code> staged. Ideal for quick terminal checks.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git status -s">Copy</button></td>
+          </tr>
+          <tr data-cat="basics" data-search="git add stage staging index file">
+            <td class="cmd">git add &lt;file&gt;</td>
+            <td><span class="pill new">Basics</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Stages modified or untracked changes for the next commit. Use <code>git add .</code> or <code>git add -A</code> to stage everything in directory.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git add .">Copy</button></td>
+          </tr>
+          <tr data-cat="basics" data-search="git commit snapshot message stage save">
+            <td class="cmd">git commit -m "msg"</td>
+            <td><span class="pill new">Basics</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Creates a permanent snapshot (commit) of staged files with an explanatory message. Adds a new point in history.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git commit -m &quot;your message&quot;">Copy</button></td>
+          </tr>
+          <tr data-cat="basics" data-search="git commit -a -m all modified stage commit single step">
+            <td class="cmd">git commit -am "msg"</td>
+            <td><span class="pill new">Basics</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Automatically stages all modified tracked files and commits them in one step. (Does not stage new untracked files).</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git commit -am &quot;quick update&quot;">Copy</button></td>
+          </tr>
+          <tr data-cat="basics" data-search="git log history oneline all commits graph tree">
+            <td class="cmd">git log --oneline --graph</td>
+            <td><span class="pill new">Basics</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Prints commit history as a visual ASCII graph. Add <code>--all</code> to inspect all local and remote branches simultaneously.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git log --oneline --all --graph">Copy</button></td>
+          </tr>
+          <tr data-cat="basics" data-search="git show inspect commit diff author timestamp">
+            <td class="cmd">git show &lt;sha&gt;</td>
+            <td><span class="pill new">Basics</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Shows detailed commit information including author, date, message, and line-by-line diff changes introduced by that commit.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git show HEAD">Copy</button></td>
+          </tr>
+          <tr data-cat="basics" data-search="git diff compare changes staged unstaged">
+            <td class="cmd">git diff / diff --staged</td>
+            <td><span class="pill new">Basics</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td><code>git diff</code> compares working tree against staging area. <code>git diff --staged</code> compares staged changes against last commit snapshot.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git diff --staged">Copy</button></td>
+          </tr>
+          <tr data-cat="basics" data-search="git restore unstage discard working tree">
+            <td class="cmd">git restore &lt;file&gt;</td>
+            <td><span class="pill new">Basics</span></td>
+            <td><span class="badge warning">Destructive</span></td>
+            <td>Discards uncommitted local edits in working directory. Use <code>git restore --staged &lt;file&gt;</code> to unstage without losing edits.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git restore --staged ">Copy</button></td>
+          </tr>
+
+          <!-- BRANCHING -->
+          <tr data-cat="branching" data-search="git branch list create delete rename">
+            <td class="cmd">git branch [-a|-m|-d|-D]</td>
+            <td><span class="pill started">Branching</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td><code>git branch</code> lists local branches. <code>-a</code> lists all local/remote branches. <code>-m &lt;new&gt;</code> renames branch. <code>-d</code> deletes merged branch; <code>-D</code> force deletes.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git branch -a">Copy</button></td>
+          </tr>
+          <tr data-cat="branching" data-search="git checkout switch create branch head">
+            <td class="cmd">git checkout -b &lt;name&gt;</td>
+            <td><span class="pill started">Branching</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Creates a new branch and switches <code>HEAD</code> pointer to it in one step. Equivalent to <code>git switch -c &lt;name&gt;</code>.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git checkout -b feature-branch">Copy</button></td>
+          </tr>
+          <tr data-cat="branching" data-search="git switch branch checkout">
+            <td class="cmd">git switch &lt;branch&gt;</td>
+            <td><span class="pill started">Branching</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Modern dedicated syntax to switch between existing branches. Leaves uncommitted edits intact if no path conflicts exist.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git switch main">Copy</button></td>
+          </tr>
+          <tr data-cat="branching" data-search="git merge fast-forward ff-only merge commit conflict no-ff">
+            <td class="cmd">git merge &lt;branch&gt;</td>
+            <td><span class="pill started">Branching</span></td>
+            <td><span class="badge safe">Adds History</span></td>
+            <td>Merges target branch into current branch. Fast-forwards if possible, or creates a 2-parent merge commit. Use <code>--no-ff</code> to force merge commit.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git merge feature-branch">Copy</button></td>
+          </tr>
+          <tr data-cat="branching" data-search="git merge --ff-only safety fast-forward sync">
+            <td class="cmd">git merge --ff-only &lt;ref&gt;</td>
+            <td><span class="pill started">Branching</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Merges only if update can be fast-forwarded without creating a merge commit. Safest method for syncing local main with upstream.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git merge --ff-only upstream/main">Copy</button></td>
+          </tr>
+
+          <!-- GITHUB & REMOTES -->
+          <tr data-cat="github" data-search="git clone download repository url">
+            <td class="cmd">git clone &lt;url&gt;</td>
+            <td><span class="pill done">GitHub</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Downloads a complete copy of a remote GitHub repository to your local machine and configures <code>origin</code> tracking automatically.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git clone https://github.com/user/repo.git">Copy</button></td>
+          </tr>
+          <tr data-cat="github" data-search="git remote add verbose list origin upstream">
+            <td class="cmd">git remote -v / add</td>
+            <td><span class="pill done">GitHub</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Lists all configured remote repository URLs (fetch &amp; push). Use <code>git remote add upstream &lt;url&gt;</code> to link original repo.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git remote -v">Copy</button></td>
+          </tr>
+          <tr data-cat="github" data-search="git fetch download remote tracking refs upstream origin">
+            <td class="cmd">git fetch &lt;remote&gt;</td>
+            <td><span class="pill done">GitHub</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Downloads commits and refs from remote repository without modifying working directory or local branches. Completely safe to run anytime.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git fetch upstream">Copy</button></td>
+          </tr>
+          <tr data-cat="github" data-search="git pull fetch merge remote branch rebase">
+            <td class="cmd">git pull [--rebase]</td>
+            <td><span class="pill done">GitHub</span></td>
+            <td><span class="badge safe">Adds History</span></td>
+            <td>Fetches changes from remote branch and immediately merges (or replays with <code>--rebase</code>) into your current local branch.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git pull origin main">Copy</button></td>
+          </tr>
+          <tr data-cat="github" data-search="git push upstream origin set-upstream delete">
+            <td class="cmd">git push -u origin &lt;branch&gt;</td>
+            <td><span class="pill done">GitHub</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Uploads local commits to specified remote branch. <code>-u</code> sets upstream tracking. Use <code>git push origin --delete &lt;branch&gt;</code> to delete remote branch.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git push -u origin feature-branch">Copy</button></td>
+          </tr>
+          <tr data-cat="github" data-search="gh issue list comment claim open-source github cli">
+            <td class="cmd">gh issue list / comment</td>
+            <td><span class="pill done">GitHub</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>GitHub CLI commands. <code>gh issue list</code> shows open issues; <code>gh issue comment &lt;id&gt; --body "..."</code> posts a comment to claim work.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="gh issue list">Copy</button></td>
+          </tr>
+          <tr data-cat="github" data-search="gh pr create pull request github cli submit">
+            <td class="cmd">gh pr create</td>
+            <td><span class="pill done">GitHub</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Opens a Pull Request on GitHub asking maintainers to pull your pushed feature branch into their <code>main</code> branch.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="gh pr create">Copy</button></td>
+          </tr>
+
+          <!-- ADVANCED & RESCUE -->
+          <tr data-cat="advanced" data-search="git stash pop list apply drop park changes dirty working tree">
+            <td class="cmd">git stash [pop|list|apply]</td>
+            <td><span class="pill" style="color:var(--accent);border-color:var(--accent-line)">Advanced</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td><code>git stash</code> temporarily shelves uncommitted changes. <code>stash list</code> views shelf, <code>stash pop</code> restores latest, <code>stash apply</code> restores without removing.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git stash">Copy</button></td>
+          </tr>
+          <tr data-cat="advanced" data-search="git rebase straight line replay commits rewrite sha interactive">
+            <td class="cmd">git rebase [-i] &lt;branch&gt;</td>
+            <td><span class="pill" style="color:var(--accent);border-color:var(--accent-line)">Advanced</span></td>
+            <td><span class="badge rewrite">Rewrites History</span></td>
+            <td>Replays your branch commits on top of another branch for a linear history. <code>-i</code> enables interactive squashing, editing, and reordering.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git rebase main">Copy</button></td>
+          </tr>
+          <tr data-cat="advanced" data-search="git push --force-with-lease lease force safe update">
+            <td class="cmd">git push --force-with-lease</td>
+            <td><span class="pill" style="color:var(--accent);border-color:var(--accent-line)">Advanced</span></td>
+            <td><span class="badge rewrite">Rewrites History</span></td>
+            <td>Safely force-pushes rebased or amended branches. Fails if someone else pushed new commits to the remote branch in the meantime.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git push --force-with-lease origin feature-branch">Copy</button></td>
+          </tr>
+          <tr data-cat="advanced" data-search="git commit --amend rewrite message fix last commit">
+            <td class="cmd">git commit --amend</td>
+            <td><span class="pill" style="color:var(--accent);border-color:var(--accent-line)">Advanced</span></td>
+            <td><span class="badge rewrite">Rewrites History</span></td>
+            <td>Replaces the most recent commit with a new commit containing currently staged changes and/or a updated commit message.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git commit --amend -m &quot;new message&quot;">Copy</button></td>
+          </tr>
+          <tr data-cat="advanced" data-search="git reset --hard --soft head undo discard uncommit">
+            <td class="cmd">git reset [--hard|--soft]</td>
+            <td><span class="pill" style="color:var(--accent);border-color:var(--accent-line)">Advanced</span></td>
+            <td><span class="badge warning">Destructive</span></td>
+            <td>Moves <code>HEAD</code> pointer back. <code>--soft</code> keeps changes staged. <code>--hard</code> resets working directory and index (recoverable via reflog).</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git reset --hard HEAD~1">Copy</button></td>
+          </tr>
+          <tr data-cat="advanced" data-search="git reflog rescue lost commit log head history position">
+            <td class="cmd">git reflog</td>
+            <td><span class="pill" style="color:var(--accent);border-color:var(--accent-line)">Advanced</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Records every position of <code>HEAD</code> over time. Use this to find SHAs of "lost" or reset commits and recover them with <code>git checkout -b rescue &lt;sha&gt;</code>.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git reflog">Copy</button></td>
+          </tr>
+          <tr data-cat="advanced" data-search="git cherry-pick pick commit single copy sha">
+            <td class="cmd">git cherry-pick &lt;sha&gt;</td>
+            <td><span class="pill" style="color:var(--accent);border-color:var(--accent-line)">Advanced</span></td>
+            <td><span class="badge safe">Adds History</span></td>
+            <td>Applies the exact changes introduced by a specific commit onto your current branch as a new commit.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git cherry-pick <sha>">Copy</button></td>
+          </tr>
+          <tr data-cat="advanced" data-search="git revert undo shared branch new commit safe">
+            <td class="cmd">git revert &lt;sha&gt;</td>
+            <td><span class="pill" style="color:var(--accent);border-color:var(--accent-line)">Advanced</span></td>
+            <td><span class="badge safe">Adds History</span></td>
+            <td>Creates a brand new commit that reverses all changes of a previous commit. Completely safe for public or shared branches.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git revert HEAD">Copy</button></td>
+          </tr>
+          <tr data-cat="advanced" data-search="git clean untracked files directories remove">
+            <td class="cmd">git clean -fd</td>
+            <td><span class="pill" style="color:var(--accent);border-color:var(--accent-line)">Advanced</span></td>
+            <td><span class="badge warning">Destructive</span></td>
+            <td>Removes untracked files (<code>-f</code>) and directories (<code>-d</code>) from your working directory. Run <code>git clean -n</code> first to preview!</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="git clean -fd">Copy</button></td>
+          </tr>
+
+          <!-- SHELL UTILITIES -->
+          <tr data-cat="shell" data-search="touch file create empty file">
+            <td class="cmd">touch &lt;file&gt;</td>
+            <td><span class="pill new">Shell</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Creates a new empty file in your current working directory.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="touch notes.md">Copy</button></td>
+          </tr>
+          <tr data-cat="shell" data-search="echo write append text file redirect">
+            <td class="cmd">echo "text" &gt; &lt;file&gt;</td>
+            <td><span class="pill new">Shell</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Writes text into a file. Use single <code>&gt;</code> to overwrite or double <code>&gt;&gt;</code> to append lines.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="echo &quot;# Hello&quot; > notes.md">Copy</button></td>
+          </tr>
+          <tr data-cat="shell" data-search="ls list files directory">
+            <td class="cmd">ls / cat / rm / mv</td>
+            <td><span class="pill new">Shell</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Standard shell helpers: <code>ls</code> lists directory contents, <code>cat &lt;file&gt;</code> prints contents, <code>rm &lt;file&gt;</code> deletes, and <code>mv</code> moves/renames.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="ls">Copy</button></td>
+          </tr>
+          <tr data-cat="shell" data-search="clear terminal screen clean">
+            <td class="cmd">clear</td>
+            <td><span class="pill new">Shell</span></td>
+            <td><span class="badge safe">Safe</span></td>
+            <td>Clears the output terminal window.</td>
+            <td style="text-align:right"><button type="button" class="copy-btn" data-copy="clear">Copy</button></td>
+          </tr>
+
+        </tbody>
+      </table>
+      <div id="no-results" class="no-results" style="display:none">
+        <p>No matching commands found for "<span id="no-query"></span>". Try another search term or select <b>All commands</b>.</p>
+      </div>
+    </div>
+
+    <!-- Troubleshooting Common Errors -->
+    <div class="stack">
+      <h2>Common Git Errors &amp; Quick Solutions</h2>
+      <div class="glossary">
+        <div class="gloss-item">
+          <h4>❌ "rejected - non-fast-forward (fetch first)"</h4>
+          <p><b>Cause:</b> Someone pushed new commits to remote <code>main</code> while you were offline.<br><b>Fix:</b> Run <code>git fetch origin</code> ➔ <code>git merge origin/main</code> ➔ <code>git push origin main</code>.</p>
+        </div>
+        <div class="gloss-item">
+          <h4>❌ "Your local changes would be overwritten by checkout"</h4>
+          <p><b>Cause:</b> You edited files that differ on the target branch.<br><b>Fix:</b> Run <code>git stash</code> ➔ switch branch ➔ <code>git stash pop</code> to restore your edits.</p>
+        </div>
+        <div class="gloss-item">
+          <h4>❌ "fatal: refusing to merge unrelated histories"</h4>
+          <p><b>Cause:</b> Local repo and remote repo were initialized independently.<br><b>Fix:</b> Run <code>git merge origin/main --allow-unrelated-histories</code>.</p>
+        </div>
+        <div class="gloss-item">
+          <h4>❌ "Merge conflict in <file>"</h4>
+          <p><b>Cause:</b> Two commits edited the exact same line of a file.<br><b>Fix:</b> Edit file to remove <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> markers, run <code>git add &lt;file&gt;</code>, then <code>git commit</code>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Mental Models / Glossary -->
+    <div class="stack">
+      <h2>Git Mental Models &amp; Concepts</h2>
+      <div class="glossary">
+        <div class="gloss-item">
+          <h4>The Three States</h4>
+          <p>Files exist in three places: <b>Working Directory</b> (local disk edits), <b>Staging Area / Index</b> (prepared for commit), and <b>Repository</b> (frozen commit history graph).</p>
+        </div>
+        <div class="gloss-item">
+          <h4>Branches are just Pointers</h4>
+          <p>A branch in Git is not a full copy of your directory. It is simply a 40-character SHA pointer pointing to a single commit. Switching branches moves the <code>HEAD</code> reference.</p>
+        </div>
+        <div class="gloss-item">
+          <h4>Fast-Forward vs Merge Commit</h4>
+          <p>A <b>Fast-Forward</b> slides a branch pointer forward when no independent commits exist on the target branch. A <b>Merge Commit</b> joins two divergent branches with a 2-parent commit.</p>
+        </div>
+        <div class="gloss-item">
+          <h4>Upstream vs Origin vs Local</h4>
+          <p><b>Upstream</b> is the canonical maintainer repository. <b>Origin</b> is your personal fork on GitHub. <b>Local</b> is the working folder on your computer.</p>
+        </div>
+        <div class="gloss-item">
+          <h4>The Reflog Safety Net</h4>
+          <p>Git never immediately deletes commits. Every movement of <code>HEAD</code> is logged in <code>git reflog</code>. Even after <code>git reset --hard</code>, your work is recoverable using its SHA.</p>
+        </div>
+        <div class="gloss-item">
+          <h4>Safe vs Destructive Rewrites</h4>
+          <p>Adding commits (<code>commit</code>, <code>merge</code>, <code>revert</code>) is safe anywhere. Rewriting history (<code>rebase</code>, <code>amend</code>, <code>reset</code>) should only be done on unshared local feature branches.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="site">
+    <span>Git-Fast-Learning &middot; Command Reference</span>
+    <span><a href="index.html">back to the map</a> &middot; <a href="level-1-basics.html">start level 1</a></span>
+  </footer>
+
+</main>
+
+<script src="js/progress.js"></script>
+<script>
+(function () {
+  Progress.mountBar('reference');
+
+  var searchInput = document.getElementById('ref-search');
+  var filterBtns = document.querySelectorAll('#ref-filters .filter-btn');
+  var rows = document.querySelectorAll('#ref-tbody tr');
+  var noResults = document.getElementById('no-results');
+  var noQuery = document.getElementById('no-query');
+
+  var currentCat = 'all';
+
+  function filterTable() {
+    var q = searchInput.value.toLowerCase().trim();
+    var matchCount = 0;
+
+    rows.forEach(function (row) {
+      var cat = row.getAttribute('data-cat');
+      var searchData = (row.getAttribute('data-search') || '') + ' ' + row.innerText;
+      searchData = searchData.toLowerCase();
+
+      var catMatch = (currentCat === 'all' || cat === currentCat);
+      var queryMatch = (!q || searchData.indexOf(q) > -1);
+
+      if (catMatch && queryMatch) {
+        row.style.display = '';
+        matchCount++;
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    if (matchCount === 0) {
+      noResults.style.display = 'block';
+      noQuery.textContent = searchInput.value;
+    } else {
+      noResults.style.display = 'none';
+    }
+  }
+
+  searchInput.addEventListener('input', filterTable);
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentCat = btn.getAttribute('data-cat');
+      filterTable();
+    });
+  });
+
+  // Copy to clipboard handling
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          Progress.toast('Copied <code>' + text + '</code> to clipboard!');
+        });
+      } else {
+        // fallback
+        var input = document.createElement('input');
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        Progress.toast('Copied <code>' + text + '</code> to clipboard!');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git-Fast-Learning — Learn Git by doing</title>
+<meta name="description" content="An interactive in-browser Git simulator with live commit graphs, branching, pull requests, and history rewriting.">
+<meta property="og:title" content="Git-Fast-Learning — Learn Git by doing">
+<meta property="og:description" content="Interactive browser-based Git trainer with real commands, live graph visualization, and 4 structured levels.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar"></header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">Git &amp; GitHub Simulator</p>
+    <h1>Learn Git by breaking it,<br>not by reading about it.</h1>
+    <p class="lede">
+      Four levels. A real Git simulator in your browser — live commit graph, staging pipeline, and a repository you can genuinely wreck and repair.
+    </p>
+
+    <!-- Git Cat Welcome Banner -->
+    <div class="cat-guide-box pop-in" style="max-width:44rem; margin: .5rem 0;">
+      <div class="git-cat-avatar mood-happy" role="img" aria-label="Git Cat Mascot">
+        <div class="cat-ears"><span class="ear ear-l"></span><span class="ear ear-r"></span></div>
+        <div class="cat-face">
+          <div class="cat-eyes"><span class="eye">•</span><span class="eye">•</span></div>
+          <div class="cat-whiskers"><span class="w-l"></span><span class="w-r"></span></div>
+          <div class="cat-nose">^</div>
+        </div>
+        <div class="cat-tail"></div>
+      </div>
+      <div class="cat-speech-bubble">
+        <span class="cat-name">Git Cat 🐱</span>
+        <p>Meow! I'm your interactive tutor. I'll guide you step-by-step with visual diagrams, animated flow arrows, and tips as you run real Git commands!</p>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn" href="level-1-basics.html">Start level 1 ➔</a>
+      <a class="btn" style="background:var(--ok);border-color:var(--ok);color:#fff" href="story.html">One Shot ⚡ (Full Story)</a>
+      <a class="btn ghost" href="reference.html">Command reference</a>
+      <button class="btn ghost" id="reset-all" type="button">Reset progress</button>
+    </div>
+  </section>
+
+  <section class="stack-lg">
+
+    <!-- Gamified Rank Showcase Banner -->
+    <div class="rank-banner pop-in" id="rank-showcase">
+      <div class="rank-info">
+        <span class="rank-badge-icon" id="rank-icon">⚡</span>
+        <div class="rank-details">
+          <h3 id="rank-title">Git Cat Novice</h3>
+          <p id="rank-desc">0 of 4 levels completed. Start Level 1 to earn XP and level up your Git Cat rank!</p>
+        </div>
+      </div>
+      <div class="xp" style="font-size:1.1rem">
+        <span>Total XP: <b id="total-xp-display" style="font-size:1.3rem">0</b></span>
+      </div>
+    </div>
+
+    <!-- Interactive Skill Journey Roadmap -->
+    <div class="stack">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <h2>Interactive Skill Journey</h2>
+        <a class="btn-sm" style="text-decoration:none;background:var(--accent-soft);border:1px solid var(--accent-line);color:var(--accent)" href="story.html">Or Try One Shot ⚡</a>
+      </div>
+      <div class="roadmap-wrap">
+        <div class="roadmap-grid" id="level-map"></div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <h2>Interactive Learning Features</h2>
+      <div class="levels">
+        <div class="level-card" style="cursor:default">
+          <span class="num">📟 Real Terminal</span>
+        </div>
+        <div class="level-card" style="cursor:default">
+          <span class="num">📈 Animated Graph</span>
+        </div>
+        <div class="level-card" style="cursor:default">
+          <span class="num">🐱 Git Cat Guidance</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <h2>What you will master</h2>
+      <div class="glossary">
+        <div class="gloss-item">
+          <h4>📦 Commit with intent</h4>
+        </div>
+        <div class="gloss-item">
+          <h4>🔀 Branch without fear</h4>
+        </div>
+        <div class="gloss-item">
+          <h4>🌐 Open-source workflow</h4>
+        </div>
+        <div class="gloss-item">
+          <h4>🛠️ Undo &amp; Reflog rescue</h4>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer class="site">
+    <span>Git-Fast-Learning &middot; a self-contained git trainer</span>
+    <span>everything runs locally &middot; no accounts, no network</span>
+  </footer>
+</main>
+
+<script src="js/progress.js"></script>
+<script src="js/levels.js"></script>
+<script>
+(function () {
+  Progress.mountBar('home');
+
+  var META = {
+    1: { tag: 'Beginner', icon: '🚀', tags: ['init', 'status', 'add', 'commit', 'diff', 'log'],
+         tasks: ['Scenario 1: Project setup & init', 'Scenario 2: Staging & first snapshot', 'Scenario 3: Selective staging & diff', 'Scenario 4: Project timeline & log'] },
+    2: { tag: 'Core', icon: '🔀', tags: ['branch', 'checkout -b', 'merge', 'conflicts'],
+         tasks: ['Listing & creating feature branches', 'Working on isolated branch', 'Fast-forward & merge commits', 'Resolving merge conflict markers'] },
+    3: { tag: 'Intermediate', icon: '🌐', tags: ['upstream', 'origin', 'fetch', 'push', 'gh pr'],
+         tasks: ['3-Copy model: Upstream, Origin, Local', 'Syncing fork with ff-only merge', 'Feature branch push to fork', 'Opening & merging Pull Requests'] },
+    4: { tag: 'Advanced', icon: '🛠️', tags: ['stash', 'rebase', 'amend', 'reset', 'reflog'],
+         tasks: ['Stashing uncommitted work', 'Rebasing feature branch onto main', 'Amending messages & force-with-lease', 'Rescuing reset commits via Reflog'] }
+  };
+
+  // Compute Rank Showcase
+  var totalComplete = 0;
+  Progress.pages.forEach(function (p) {
+    if (Progress.level(p.id).complete) totalComplete++;
+  });
+  var totalXP = Progress.xp();
+  document.getElementById('total-xp-display').textContent = totalXP;
+
+  var ranks = [
+    { icon: '⚡', title: 'Git Cat Novice', desc: 'Starting your Git journey. Complete Level 1 to level up!' },
+    { icon: '🚀', title: 'Branch Cub', desc: 'You mastered local repositories, staging, and commits!' },
+    { icon: '🔀', title: 'Merge Captain', desc: 'You master branches, fast-forwards, and manual conflict resolution!' },
+    { icon: '🌐', title: 'PR Panther', desc: 'You master open-source contributions, remotes, and pull requests!' },
+    { icon: '👑', title: 'Git Ninja Cat', desc: 'Meow-velous! You master rebasing, reflog rescuing, and history rewriting!' }
+  ];
+  var r = ranks[Math.min(totalComplete, 4)];
+  document.getElementById('rank-icon').textContent = r.icon;
+  document.getElementById('rank-title').textContent = r.title;
+  document.getElementById('rank-desc').textContent = r.desc;
+
+  // Build Connected Interactive Roadmap Grid
+  var host = document.getElementById('level-map');
+  Progress.pages.forEach(function (p) {
+    var lvl = window.LEVELS[p.id];
+    var total = lvl.tasks.length;
+    var done = Progress.level(p.id).tasks.length;
+    var complete = Progress.level(p.id).complete;
+    var pct = Math.round((done / total) * 100);
+    var pill = complete ? '<span class="pill done">✓ Complete</span>'
+             : done ? '<span class="pill started">' + done + '/' + total + ' tasks</span>'
+             : '<span class="pill new">Not started</span>';
+    var m = META[p.id];
+
+    var card = document.createElement('div');
+    card.className = 'roadmap-card' + (done > 0 && !complete ? ' active-card' : '');
+    card.innerHTML =
+      '<div class="roadmap-node-head">' +
+        '<span class="roadmap-step">Step 0' + p.id + '</span>' +
+        pill +
+      '</div>' +
+      '<div class="roadmap-title">' +
+        '<span class="ico">' + m.icon + '</span>' +
+        '<h3>Level ' + p.id + ': ' + lvl.title + '</h3>' +
+      '</div>' +
+      '<div class="roadmap-tags">' +
+        m.tags.map(function (t) { return '<span class="tag-chip"><code>' + t + '</code></span>'; }).join('') +
+      '</div>' +
+      '<div class="meter"><i style="width:' + pct + '%"></i></div>' +
+      '<div class="roadmap-actions">' +
+        '<button type="button" class="peek-btn" data-target="drawer-' + p.id + '">Peek Tasks 👁️</button>' +
+        '<a class="btn-sm primary" style="text-decoration:none" href="' + p.file + '">' +
+          (complete ? 'Review Level ➔' : (done ? 'Continue ➔' : 'Launch ➔')) +
+        '</a>' +
+      '</div>' +
+      '<div class="task-drawer" id="drawer-' + p.id + '">' +
+        '<b>Tasks Overview:</b>' +
+        '<ul>' + m.tasks.map(function (tk) { return '<li>' + tk + '</li>'; }).join('') + '</ul>' +
+      '</div>';
+
+    host.appendChild(card);
+  });
+
+  // Handle Task Drawer Toggles
+  document.querySelectorAll('.peek-btn').forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var targetId = btn.getAttribute('data-target');
+      var drawer = document.getElementById(targetId);
+      if (drawer) {
+        var isShown = drawer.classList.contains('show');
+        document.querySelectorAll('.task-drawer').forEach(function (d) { d.classList.remove('show'); });
+        if (!isShown) drawer.classList.add('show');
+      }
+    });
+  });
+
+  document.getElementById('reset-all').addEventListener('click', function () {
+    if (!confirm('Clear all progress and XP on this machine?')) return;
+    Progress.resetAll();
+    location.reload();
+  });
+})();
+</script>
+</body>
+</html>

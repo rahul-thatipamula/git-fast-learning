@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Level 2 · Branches and merges — Git-Fast-Learning</title>
+<meta name="description" content="Level 2: Branching, fast-forward vs merge commits, and resolving merge conflicts.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar"></header>
+
+<main class="wrap">
+  <div class="level-layout">
+
+    <div class="brief">
+
+      <div class="stack">
+        <p class="eyebrow">Level 2 &middot; Core</p>
+        <h1>Branches, merges, and one honest conflict</h1>
+        <p style="color:var(--muted)">
+          A branch is a sticky note pointing at a commit.
+        </p>
+        <div class="meter"><i id="level-meter" style="width:0%"></i></div>
+        <p class="eyebrow"><span id="level-count">0 / 9</span> tasks &middot; <span id="level-total">9</span> total</p>
+      </div>
+
+      <!-- Git Cat Mascot Guide -->
+      <div id="cat-guide-host"></div>
+
+      <!-- Live Repository Graph & Working Directory Explorer Container (Below Git Cat) -->
+      <div id="repo-side-host" class="stack" style="margin-bottom:1rem"></div>
+
+      <!-- Visual Branch & Conflict Flow Card -->
+      <section class="panel lesson">
+        <h3>Branching &amp; Conflict Resolution</h3>
+        <div class="pipeline-diagram">
+          <div class="flow-card wd">
+            <span class="icon">🌿</span>
+            <h4>Pointer, Not Copy</h4>
+            <p><code>git checkout -b</code> moves HEAD pointer to a new branch label instantly.</p>
+          </div>
+          <div class="flow-arrow">
+            <span class="arr">➔</span>
+            <code>git merge</code>
+          </div>
+          <div class="flow-card sa">
+            <span class="icon">🔀</span>
+            <h4>Fast-Forward vs Merge</h4>
+            <p>Fast-forward slides the pointer. Diverged commits build a 2-parent merge commit.</p>
+          </div>
+          <div class="flow-arrow">
+            <span class="arr">➔</span>
+            <code>fix markers</code>
+          </div>
+          <div class="flow-card repo">
+            <span class="icon">🛠️</span>
+            <h4>Conflict Markers</h4>
+            <p>Delete <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>, stage &amp; commit!</p>
+          </div>
+        </div>
+      </section>
+
+
+      <div class="done-banner" id="done-banner">
+        <h3>Level 2 complete</h3>
+        <p>You have made both kinds of merge and resolved a conflict by hand. Everything so far
+           happened on one machine — next, other people get involved.</p>
+        <div><a class="btn" id="next-level" href="level-3-github.html">Go to level 3 &rarr;</a></div>
+      </div>
+
+    </div>
+
+    <div class="lab" id="lab"></div>
+  </div>
+
+  <footer class="site">
+    <span>Level 2 of 4</span>
+    <span><a href="index.html">back to the map</a> &middot; <a href="reference.html">reference</a></span>
+  </footer>
+</main>
+
+<script src="js/progress.js"></script>
+<script src="js/git-engine.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/lab.js"></script>
+<script>startLevel(2);</script>
+</body>
+</html>

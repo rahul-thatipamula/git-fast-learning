@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What to Ask AI — Git-Fast-Learning Simulator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<header class="topbar" id="topbar"></header>
+
+<main class="wrap">
+
+  <section class="hero" style="padding-bottom:1.5rem; margin-bottom:1.5rem;">
+    <p class="eyebrow">AI Learning Companion</p>
+    <h1>What to Ask AI 🤖</h1>
+    <p class="lede">
+      Stuck or curious? Here are 50 real-world human questions ranging from Day 1 beginner thoughts to advanced technical rescues.
+      Click <b>Copy Question</b> on any card and paste it directly into ChatGPT, Gemini, or Claude!
+    </p>
+
+    <!-- Git Cat Assistant Banner -->
+    <div class="cat-guide-box pop-in" style="max-width:44rem; margin: .5rem 0;">
+      <div class="git-cat-avatar mood-happy" role="img" aria-label="Git Cat Mascot">
+        <div class="cat-ears"><span class="ear ear-l"></span><span class="ear ear-r"></span></div>
+        <div class="cat-face">
+          <div class="cat-eyes"><span class="eye">•</span><span class="eye">•</span></div>
+          <div class="cat-whiskers"><span class="w-l"></span><span class="w-r"></span></div>
+          <div class="cat-nose">^</div>
+        </div>
+        <div class="cat-tail"></div>
+      </div>
+      <div class="cat-speech-bubble">
+        <span class="cat-name">Git Cat 🐱</span>
+        <p>Meow! Don't hesitate to ask AI when a concept feels fuzzy. Click <b>Copy Question</b> on any question below to get an instant explanation from your AI tutor!</p>
+      </div>
+    </div>
+
+    <!-- Search & Filter Controls -->
+    <div class="ref-controls">
+      <div class="ref-search-wrap">
+        <input type="text" id="ai-search" placeholder="Search 50 questions (e.g. fetch, pull, merge conflict, reflog, main)..." aria-label="Search AI questions" autocomplete="off">
+      </div>
+      <div class="ref-filters" id="ai-filters">
+        <button type="button" class="filter-btn active" data-cat="all">All 100 Questions</button>
+        <button type="button" class="filter-btn" data-cat="silly">Day 1 &amp; Silly (01-10)</button>
+        <button type="button" class="filter-btn" data-cat="staging">Staging &amp; Commits (11-20)</button>
+        <button type="button" class="filter-btn" data-cat="branching">Branching &amp; Conflicts (21-30)</button>
+        <button type="button" class="filter-btn" data-cat="github">GitHub, Fetch &amp; PRs (31-40)</button>
+        <button type="button" class="filter-btn" data-cat="advanced">Rescues &amp; History (41-50)</button>
+        <button type="button" class="filter-btn" data-cat="realworld">Real-World Workflows (51-60)</button>
+        <button type="button" class="filter-btn" data-cat="teamwork">PRs &amp; Team Reviews (61-70)</button>
+        <button type="button" class="filter-btn" data-cat="fixes">Fixing Mistakes (71-80)</button>
+        <button type="button" class="filter-btn" data-cat="pro">Tags &amp; Release Tools (81-90)</button>
+        <button type="button" class="filter-btn" data-cat="career">Career &amp; Mastery (91-100)</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="stack-lg">
+
+    <!-- Questions Grid -->
+    <div class="glossary" id="ai-questions-grid" style="grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));">
+
+      <!-- CATEGORY 1: DAY 1 & SILLY -->
+      <div class="gloss-item q-card" data-cat="silly" data-search="google drive dropbox cloud backup files">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Day 1 &middot; Question 01</span>
+        <h4>Is Git just Google Drive or Dropbox for programmers?</h4>
+        <p>Explain how Git differs from cloud storage. Why doesn't Git just automatically upload files as I type?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Is Git just Google Drive or Dropbox for programmers? Explain how Git differs from cloud storage and why manual commits matter.">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="silly" data-search="status angry untracked red text font">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Day 1 &middot; Question 02</span>
+        <h4>Why does `git status` sound so angry when it yells UNTRACKED files at me?</h4>
+        <p>What does Git actually mean when it says a file is untracked, and is my computer in danger?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What does Git mean when git status reports UNTRACKED files in red? Is my computer or project in danger?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="silly" data-search="git init desktop downloads folder whole Mac explode">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Day 1 &middot; Question 03</span>
+        <h4>What happens if I accidentally run `git init` in my Mac Desktop or Downloads folder?</h4>
+        <p>How do I remove the hidden `.git` folder if I initialized Git in the wrong directory?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What happens if I accidentally run git init in my Mac Desktop or Downloads folder? How do I safely undo git init?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="silly" data-search="google docs auto save real time auto commit">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Day 1 &middot; Question 04</span>
+        <h4>Why can't Git just save my changes automatically like Google Docs?</h4>
+        <p>Why is explicit snapshotting with `git commit` better for code development than continuous auto-saving?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why can't Git save changes automatically like Google Docs? Why is explicit snapshotting with git commit better for code?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="silly" data-search="delete .git folder hidden erase code files">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Day 1 &middot; Question 05</span>
+        <h4>If I delete the hidden `.git` folder, will my code files vanish from my disk?</h4>
+        <p>What actually lives inside `.git` versus your working directory files on disk?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="If I delete the hidden .git folder, will my actual source code files be deleted from disk? What lives inside .git?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="silly" data-search="commit message typo asdf bad message habit">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Day 1 &middot; Question 06</span>
+        <h4>Why do commit messages exist, and what happens if I just write "asdf"?</h4>
+        <p>Why do software teams care so much about clean commit messages?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why are good git commit messages important? What problems happen when developers write lazy commit messages like 'asdf' or 'stuff'?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="silly" data-search="difference git github simple explanation beginner">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Day 1 &middot; Question 07</span>
+        <h4>What is the difference between Git and GitHub in plain simple words?</h4>
+        <p>Use a real-world analogy to explain Git vs GitHub to a complete beginner.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Explain the difference between Git and GitHub using a simple real-world analogy for a complete beginner.">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="silly" data-search="break mac windows operating system terminal damage">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Day 1 &middot; Question 08</span>
+        <h4>Can I break my computer operating system by typing wrong Git commands?</h4>
+        <p>Is Git isolated to your repository folder, or can it mess up macOS/Windows settings?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Can typing wrong Git commands break my Mac or Windows operating system? How isolated is Git to my project folder?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="silly" data-search="linus torvalds linux creator history name">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Day 1 &middot; Question 09</span>
+        <h4>Why is Git called 'Git' and who invented it?</h4>
+        <p>What is the origin story of Linus Torvalds creating Git in 2005 for Linux kernel development?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why is Git called 'Git', who created it, and why was it invented in 2005?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="silly" data-search="offline internet wifi laptop commit offline mode">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Day 1 &middot; Question 10</span>
+        <h4>If I turn off my Wi-Fi, can I still use `git commit` on my laptop?</h4>
+        <p>Explain why Git is a distributed version control system that works 100% offline.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="If I turn off my Wi-Fi, can I still use git commit on my laptop? Explain why Git works offline.">Copy Question 📋</button>
+      </div>
+
+
+      <!-- CATEGORY 2: STAGING & COMMITS -->
+      <div class="gloss-item q-card" data-cat="staging" data-search="git add git commit two steps staging area index">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Staging &middot; Question 11</span>
+        <h4>Why do I have to `git add` AND `git commit`? Isn't staging unnecessary?</h4>
+        <p>Explain the staging area (index) and why choosing what goes into a snapshot is vital.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why does Git require two steps: git add AND git commit? What is the purpose of the Staging Area / Index?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="staging" data-search="amend typo message last commit fix message">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Staging &middot; Question 12</span>
+        <h4>What should I do if I made a typo in my last commit message right after committing?</h4>
+        <p>How does `git commit --amend -m "new message"` fix your last commit safely?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="I made a typo in my last git commit message. How do I fix it using git commit --amend?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="staging" data-search="git add . dot dangerous all files practice">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Staging &middot; Question 13</span>
+        <h4>Is running `git add .` dangerous or bad practice?</h4>
+        <p>When is `git add .` convenient versus when might it accidentally stage secret credentials or temp files?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Is running git add . dangerous? When should I stage specific files versus staging everything?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="staging" data-search="git diff compare inspect unstaged changes">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Staging &middot; Question 14</span>
+        <h4>How do I check what lines I changed before staging them for commit?</h4>
+        <p>Explain `git diff` for unstaged edits and `git diff --staged` for staged changes.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I inspect line-by-line changes before staging them? Explain git diff vs git diff --staged.">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="staging" data-search="three states working directory staging repository">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Staging &middot; Question 15</span>
+        <h4>What is the difference between working directory, staging area, and repository?</h4>
+        <p>Break down the 3-State File Pipeline with clear examples for each state.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Explain the three states of Git: Working Directory, Staging Area (Index), and Repository with clear examples.">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="staging" data-search="unstage file git restore staged mistake">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Staging &middot; Question 16</span>
+        <h4>How do I undo `git add` if I staged a file by mistake?</h4>
+        <p>How does `git restore --staged <file>` remove a file from staging without losing local edits?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="I accidentally ran git add on a file I didn't mean to stage. How do I unstage it without deleting my code edits?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="staging" data-search="edit after staging modify twice add index">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Staging &middot; Question 17</span>
+        <h4>What happens if I edit a file after staging it with `git add`?</h4>
+        <p>Why does `git status` show a file as both staged AND unstaged at the same time?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What happens if I edit a file AFTER I already ran git add? Why does git status show it twice?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="staging" data-search="discard uncommitted edits git restore discard changes">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Staging &middot; Question 18</span>
+        <h4>How do I throw away uncommitted edits in a file without breaking anything else?</h4>
+        <p>How does `git restore <file>` discard working directory edits and restore last committed state?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I discard uncommitted changes in a specific file and restore it to the last commit using git restore?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="staging" data-search="git log hash SHA 40 character commit id">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Staging &middot; Question 19</span>
+        <h4>Why does `git log` show weird 40-character numbers like `a1b2c3d4`?</h4>
+        <p>Explain SHA-1 commit hashes, why they are unique identifiers, and why short 7-character SHAs work.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why does git log show 40-character commit hashes (SHAs)? What are they used for and why are short SHAs sufficient?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="staging" data-search=".gitignore node_modules env secrets exclude">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Staging &middot; Question 20</span>
+        <h4>What is a `.gitignore` file and why is `node_modules` in it?</h4>
+        <p>Why should build artifacts, API keys, and heavy dependencies never be tracked in Git?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is a .gitignore file, how does it work, and why should dependencies like node_modules be ignored?">Copy Question 📋</button>
+      </div>
+
+
+      <!-- CATEGORY 3: BRANCHING & CONFLICTS -->
+      <div class="gloss-item q-card" data-cat="branching" data-search="why branch feature branch main production isolated">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Branching &middot; Question 21</span>
+        <h4>Why do developers create feature branches instead of working on `main`?</h4>
+        <p>Explain how branches isolate work and prevent unfinished code from breaking main.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why do developers create feature branches instead of committing directly to main?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="branching" data-search="HEAD detached head pointer current branch position">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Branching &middot; Question 22</span>
+        <h4>What is `HEAD` in Git, and why does terminal sometimes say 'detached HEAD'?</h4>
+        <p>Explain the `HEAD` pointer and what happens when `HEAD` points directly to a commit SHA instead of a branch.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is HEAD in Git? What does 'detached HEAD' mean and how do I fix it?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="branching" data-search="git checkout -b vs git switch -c difference">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Branching &middot; Question 23</span>
+        <h4>Is `git checkout -b my-branch` the exact same thing as `git switch -c my-branch`?</h4>
+        <p>Why did Git introduce `git switch` and `git restore` in recent versions to replace multi-purpose `git checkout`?</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Is git checkout -b the same as git switch -c? Why did Git introduce git switch and git restore?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="branching" data-search="fast-forward merge ff ff-only merge commit pointer">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Branching &middot; Question 24</span>
+        <h4>What is a fast-forward merge and why didn't it create a merge commit?</h4>
+        <p>Explain why Git simply slides the branch pointer forward when no divergent commits exist.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is a fast-forward merge in Git? Why does it not create a merge commit?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="branching" data-search="merge conflict conflict markers panic terrified">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Branching &middot; Question 25</span>
+        <h4>Why do developers get terrified when they see merge conflict markers?</h4>
+        <p>Demystify merge conflicts: why Git stops when two people edit the same lines, and why it is easy to fix.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why do merge conflicts happen? Demystify merge conflicts and explain why they are not scary.">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="branching" data-search="resolve merge conflict step by step <<<<<< HEAD ======= >>>>>>>">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Branching &middot; Question 26</span>
+        <h4>What should I do step-by-step when `git merge` stops and shows `<<<<<<< HEAD`?</h4>
+        <p>Walk through editing the conflict markers, staging resolved files with `git add`, and finishing with `git commit`.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What should I do step-by-step when git merge stops with conflict markers like <<<<<<< HEAD, =======, and >>>>>>>?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="branching" data-search="delete branch git branch -d safety seatbelt">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Branching &middot; Question 27</span>
+        <h4>Can I safely delete a branch after merging it into `main`?</h4>
+        <p>Why deleting a merged branch (`git branch -d`) does NOT delete your commits from history.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Can I safely delete a feature branch after merging it into main? Will my commits be deleted?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="branching" data-search="git branch -d unmerged refused capital -D">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Branching &middot; Question 28</span>
+        <h4>What happens if I try to delete an unmerged branch with `git branch -d`?</h4>
+        <p>Explain how lowercase `-d` acts as a safety seatbelt and why capital `-D` force deletes.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why does git branch -d refuse to delete unmerged branches? What is the difference between -d and -D?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="branching" data-search="git log --graph --all --oneline visual graph tree">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Branching &middot; Question 29</span>
+        <h4>How do I see all local and remote branches in my repository graph?</h4>
+        <p>Explain `git log --oneline --all --graph` to print an ASCII visual commit tree in your terminal.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I view all branches and commit history as a visual graph in terminal using git log?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="branching" data-search="two people edit different lines same file merge auto">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Branching &middot; Question 30</span>
+        <h4>What happens if two people edit different lines of the same file?</h4>
+        <p>Explain automatic 3-way merge: Git automatically combines edits on different lines without prompting a conflict!</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What happens if two people edit different lines of the same file? Does Git merge them automatically?">Copy Question 📋</button>
+      </div>
+
+
+      <!-- CATEGORY 4: GITHUB, FETCH & PRS -->
+      <div class="gloss-item q-card" data-cat="github" data-search="git fetch vs git pull when to use fetch safer">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">GitHub &middot; Question 31</span>
+        <h4>When should I use `git fetch` instead of `git pull`, and why is fetch safer?</h4>
+        <p>Explain why `git fetch` downloads remote changes into tracking refs without touching your local branch, whereas `pull` immediately merges.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="When should I use git fetch instead of git pull, and why is git fetch considered safer?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="github" data-search="someone merged to main online local machine behind">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">GitHub &middot; Question 32</span>
+        <h4>What should I do if someone else merged code to `main` on GitHub while I'm on my local machine?</h4>
+        <p>Step-by-step workflow: fetch remote, merge or rebase main, sync local branch, and resolve any conflicts.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What should I do if someone else merged new code to main on GitHub while I am working on my local machine?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="github" data-search="pull main online merges made by other person conflict step by step">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">GitHub &middot; Question 33</span>
+        <h4>What happens if I pull `main` containing merges made by someone else, when to pull, and what if there are conflicts?</h4>
+        <p>Complete guide: When to pull, what `git pull` does under the hood, and exact steps to resolve merge conflicts if they occur.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What happens when I pull main containing commits made by someone else? When should I pull, and step-by-step what should I do if merge conflicts occur?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="github" data-search="origin vs upstream fork remote canonical maintainer">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">GitHub &middot; Question 34</span>
+        <h4>What is the difference between `origin` and `upstream` when working on open source forks?</h4>
+        <p>Explain `origin` (your fork on GitHub) vs `upstream` (the maintainer's canonical project repo).</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is the difference between origin and upstream remotes when contributing to open source forks?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="github" data-search="Pull Request PR why pull instead of push github">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">GitHub &middot; Question 35</span>
+        <h4>What is a Pull Request (PR) and why is it called 'pull' instead of 'push'?</h4>
+        <p>Why PRs ask the maintainer to <em>pull</em> your branch into their main repository.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is a Pull Request (PR) on GitHub, and why is it named 'pull request' instead of 'push request'?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="github" data-search="git push -u set-upstream origin main tracking branch">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">GitHub &middot; Question 36</span>
+        <h4>What does `git push -u origin main` do and why do I only need `-u` the first time?</h4>
+        <p>Explain upstream tracking branch linkage (`-u` / `--set-upstream`).</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What does the -u flag do in git push -u origin main? Why do I only need it on the first push?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="github" data-search="push rejected fetch first non-fast-forward github">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">GitHub &middot; Question 37</span>
+        <h4>Why does GitHub reject my `git push` saying 'fetch first' or 'non-fast-forward'?</h4>
+        <p>Why Git prevents overwriting remote commits when your local branch does not contain remote changes.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why does git push fail with 'rejected - non-fast-forward (fetch first)'? How do I resolve it safely?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="github" data-search="sync fork upstream main merge ff-only github button">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">GitHub &middot; Question 38</span>
+        <h4>How do I sync my forked repository on GitHub with the maintainer's main repository?</h4>
+        <p>Terminal steps (`git fetch upstream` ➔ `git merge --ff-only upstream/main` ➔ `git push origin main`).</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I sync my local and fork repositories with the maintainer's upstream main branch using command line?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="github" data-search="commit to branch after opening PR update pull request automatically">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">GitHub &middot; Question 39</span>
+        <h4>Can I keep committing to my local branch after opening a Pull Request on GitHub?</h4>
+        <p>Explain how pushing new commits to the same branch automatically updates the open Pull Request on GitHub!</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="If I push new commits to a branch with an open Pull Request, does the PR update automatically on GitHub?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="github" data-search="maintainer merges PR what happens local branch sync cleanup">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">GitHub &middot; Question 40</span>
+        <h4>What happens on GitHub when a maintainer merges my Pull Request?</h4>
+        <p>Why nothing changes on your local machine automatically, and how to sync local main and delete feature branch.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What happens locally when a maintainer merges my PR on GitHub? What cleanup commands should I run?">Copy Question 📋</button>
+      </div>
+
+
+      <!-- CATEGORY 5: ADVANCED, RESCUES & REWRITING -->
+      <div class="gloss-item q-card" data-cat="advanced" data-search="git stash stash pop temporary park uncommitted work">
+        <span class="pill rewrite" style="margin-bottom:.4rem;display:inline-block">Advanced &middot; Question 41</span>
+        <h4>What is `git stash` and when should I use it instead of making a temporary commit?</h4>
+        <p>Explain how `git stash` shelves dirty working tree edits when you need to switch branches quickly.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is git stash, how does stash pop work, and when should I stash instead of committing?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="advanced" data-search="git rebase linear history rewrite commit SHA vs merge">
+        <span class="pill rewrite" style="margin-bottom:.4rem;display:inline-block">Advanced &middot; Question 42</span>
+        <h4>Why is `git rebase` called history rewriting, and why is it cleaner than `git merge`?</h4>
+        <p>Explain how rebase replays commits on top of main for a straight linear commit graph.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why is git rebase called history rewriting? How does rebase differ from merge and why do teams prefer linear history?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="advanced" data-search="rebase dangerous shared public main branch golden rule">
+        <span class="pill rewrite" style="margin-bottom:.4rem;display:inline-block">Advanced &middot; Question 43</span>
+        <h4>Why is running `git rebase` dangerous on shared public branches?</h4>
+        <p>The Golden Rule of Rebasing: Never rebase commits that have already been pushed and shared with other developers!</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why is git rebase dangerous on shared public branches? What is the golden rule of rebasing?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="advanced" data-search="force-with-lease vs force force push safe overwrite">
+        <span class="pill rewrite" style="margin-bottom:.4rem;display:inline-block">Advanced &middot; Question 44</span>
+        <h4>What is `--force-with-lease` and why is it safer than `--force` when pushing rebased code?</h4>
+        <p>Why `--force-with-lease` refuses to push if another developer pushed new commits to the remote branch in the meantime.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is git push --force-with-lease? Why is it safer than git push --force?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="advanced" data-search="reset --hard lost commit delete commit gone forever">
+        <span class="pill warning" style="margin-bottom:.4rem;display:inline-block">Advanced &middot; Question 45</span>
+        <h4>If I run `git reset --hard HEAD~1` and my commit vanishes, is it gone forever?</h4>
+        <p>Explain why Git does NOT delete commit objects immediately, and how the reflog preserves commits for weeks.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="If I run git reset --hard HEAD~1 and my commit disappears from git log, is it really gone forever? How does Git store commits?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="advanced" data-search="git reflog rescue lost reset commit head history position">
+        <span class="pill warning" style="margin-bottom:.4rem;display:inline-block">Advanced &middot; Question 46</span>
+        <h4>How does `git reflog` act as a safety net to rescue lost commits?</h4>
+        <p>Explain `git reflog` (reference log) which records every movement of HEAD, allowing you to find lost commit SHAs.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How does git reflog work as a safety net to find lost or reset commits?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="advanced" data-search="git checkout -b rescue sha recover reflog commit">
+        <span class="pill warning" style="margin-bottom:.4rem;display:inline-block">Advanced &middot; Question 47</span>
+        <h4>How do I use `git checkout -b rescue <sha>` to pull a lost commit out of the reflog?</h4>
+        <p>Step-by-step guide to recovering lost commits from reflog by pointing a new rescue branch at the SHA.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I use git checkout -b rescue <sha> to restore a lost commit found in git reflog?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="advanced" data-search="git cherry-pick single commit copy branch sha">
+        <span class="pill rewrite" style="margin-bottom:.4rem;display:inline-block">Advanced &middot; Question 48</span>
+        <h4>What is `git cherry-pick` and when should I copy a single commit from another branch?</h4>
+        <p>When you want specific changes from one commit without merging an entire feature branch.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is git cherry-pick <sha> and when should I use it to copy a single commit from another branch?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="advanced" data-search="git revert vs git reset difference safe public undo">
+        <span class="pill rewrite" style="margin-bottom:.4rem;display:inline-block">Advanced &middot; Question 49</span>
+        <h4>What is the difference between `git revert` and `git reset` when undoing mistakes?</h4>
+        <p>Why `git revert` (adding an inverse commit) is safe for shared branches, whereas `git reset` rewrites local history.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is the difference between git revert and git reset? Which one is safe to use on public/shared branches?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="advanced" data-search="number 1 rule stuck panicking git status status status">
+        <span class="pill rewrite" style="margin-bottom:.4rem;display:inline-block">Advanced &middot; Question 50</span>
+        <h4>What is the #1 rule to remember when you feel stuck or panicking in Git?</h4>
+        <p>Run `git status`, read the clear error messages, and remember that local commits are preserved in reflog!</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is the golden rule when you get stuck or feel lost in Git? How does git status help?">Copy Question 📋</button>
+      </div>
+
+
+      <!-- CATEGORY 6: REAL-WORLD WORKFLOWS (51-60) -->
+      <div class="gloss-item q-card" data-cat="realworld" data-search="committed password api key secret remove history">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Workflows &middot; Question 51</span>
+        <h4>What should I do if I accidentally committed a password or API key secret to Git?</h4>
+        <p>Why committing secrets is dangerous and how to revoke the key and rewrite history using BFG or filter-repo.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="I accidentally committed a secret API key or password to Git. What emergency steps should I take to revoke the key and clean history?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="realworld" data-search="code works on my machine breaks teammate machine OS dependencies">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Workflows &middot; Question 52</span>
+        <h4>Why does my code work on my laptop but breaks on my teammate's machine?</h4>
+        <p>Explain how uncommitted files, missing dependencies in lockfiles, or OS line endings cause team mismatches.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why does code work fine on my machine but break on my teammate's machine? What Git/project files prevent this?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="realworld" data-search="how often commit every 5 minutes feature complete small atomic">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Workflows &middot; Question 53</span>
+        <h4>How often should I commit: every 5 minutes or only when a full feature is done?</h4>
+        <p>Explain atomic commits: small, logical units of work that pass tests and make history easy to read.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How frequently should developers commit code? What are atomic commits and why are small commits better?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="realworld" data-search="SSH vs HTTPS git github authentication key passphrase">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Workflows &middot; Question 54</span>
+        <h4>What is the difference between SSH keys and HTTPS when connecting Git to GitHub?</h4>
+        <p>Why SSH keys (`ed25519`) eliminate password prompts and provide seamless encrypted authentication.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is the difference between SSH and HTTPS in Git authentication? Why do developers prefer SSH keys?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="realworld" data-search="everything up to date git push nothing to commit files changed">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Workflows &middot; Question 55</span>
+        <h4>Why does `git push` say 'Everything up-to-date' when I know I edited local files?</h4>
+        <p>Why Git pushes <em>commits</em>, not raw files! If you haven't run `git commit`, there is nothing new to push.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why does git push say 'Everything up-to-date' even though I changed local files? Why must I commit first?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="realworld" data-search="main vs master default branch name github rename">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Workflows &middot; Question 56</span>
+        <h4>What is `main` vs `master` and why did GitHub switch the default branch name?</h4>
+        <p>Explain the historical change to inclusive terminology and how `git branch -m main` renames your default branch.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why did GitHub change default branch names from master to main? How do I rename master to main in Git?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="realworld" data-search="edit code directly github website web editor dangerous">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Workflows &middot; Question 57</span>
+        <h4>What happens if I edit code directly inside the GitHub website file editor?</h4>
+        <p>Why editing on GitHub creates a real commit on the remote branch that you must pull to your local machine.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What happens if I edit files directly on GitHub.com? Why must I pull those changes locally afterward?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="realworld" data-search="git clone vs git fork open source contribution start">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Workflows &middot; Question 58</span>
+        <h4>What is `git clone` vs `git fork` and which one should I do first?</h4>
+        <p>Explain Forking (server-side copy on GitHub) vs Cloning (downloading a repository copy to your local hard drive).</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is the difference between git fork and git clone? Which one do I perform first when contributing to open source?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="realworld" data-search="CRLF vs LF line endings windows mac autocrlf">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Workflows &middot; Question 59</span>
+        <h4>Why does Git warn about CRLF vs LF line endings between Windows and Mac?</h4>
+        <p>How `core.autocrlf` normalizes line breaks so Windows and Mac developers can collaborate without diff noise.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why does Git warn about CRLF vs LF line endings? How do core.autocrlf settings solve Windows/Mac collaboration?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="realworld" data-search="ignore file already committed git rm --cached gitignore">
+        <span class="pill new" style="margin-bottom:.4rem;display:inline-block">Workflows &middot; Question 60</span>
+        <h4>How do I ignore a file in `.gitignore` if it was ALREADY committed in the past?</h4>
+        <p>How `git rm --cached <file>` removes a file from Git tracking without deleting it from your local disk.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="I added a file to .gitignore but Git is still tracking it. How do I un-track it using git rm --cached?">Copy Question 📋</button>
+      </div>
+
+
+      <!-- CATEGORY 7: PRS & TEAM REVIEWS (61-70) -->
+      <div class="gloss-item q-card" data-cat="teamwork" data-search="pull request review senior developer approval tips clean PR">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Teamwork &middot; Question 61</span>
+        <h4>What makes a Pull Request easy for a senior developer to review and approve?</h4>
+        <p>Best practices: clear description screenshots, small diff sizes, linked issue numbers, and passing test suites.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What makes a Pull Request easy for senior developers to review and approve? What PR habits speed up approvals?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="teamwork" data-search="Draft Pull Request draft PR github early feedback work in progress">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Teamwork &middot; Question 62</span>
+        <h4>What is a 'Draft Pull Request' on GitHub and when should I open one?</h4>
+        <p>Why opening a Draft PR lets you share early work and get feedback before code is ready for final merge.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is a Draft Pull Request on GitHub? When is opening a Draft PR useful during feature development?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="teamwork" data-search="reviewer requests changes update PR push new commits">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Teamwork &middot; Question 63</span>
+        <h4>How do I update my PR when a code reviewer asks for changes?</h4>
+        <p>Simply edit your local branch files, commit, and push! The existing open Pull Request on GitHub updates automatically.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I update my GitHub Pull Request after a reviewer asks for changes? Do I need to open a new PR?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="teamwork" data-search="Squash and Merge vs Create a Merge Commit github merge button">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Teamwork &middot; Question 64</span>
+        <h4>What is 'Squash and Merge' on GitHub versus 'Create a Merge Commit'?</h4>
+        <p>Why squashing combines all branch commits into 1 clean commit on main, keeping repository history tidy.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is the difference between 'Squash and merge' and 'Create a merge commit' options on GitHub PRs?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="teamwork" data-search="Branch Protection Rules github force push main block">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Teamwork &middot; Question 65</span>
+        <h4>What are Branch Protection Rules on GitHub and why can't I force-push to main?</h4>
+        <p>How teams enforce PR reviews, passing CI status checks, and block accidental `git push --force` destructions.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What are Branch Protection Rules on GitHub? Why do production repositories prevent force pushing to main?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="teamwork" data-search="CODEOWNERS file github automatic reviewer request">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Teamwork &middot; Question 66</span>
+        <h4>What is a `.github/CODEOWNERS` file and how does it assign PR reviewers?</h4>
+        <p>How repository maintainers specify specific team members to automatically review PRs for sensitive folders.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is a CODEOWNERS file in a GitHub repository? How does it automatically request PR reviews?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="teamwork" data-search="GitHub Actions CI CD workflow check mark red X PR">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Teamwork &middot; Question 67</span>
+        <h4>What are GitHub Actions and why does my PR show a green checkmark or red X?</h4>
+        <p>Explain Continuous Integration (CI): automated test runners that verify code builds and passes tests on every PR.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What are GitHub Actions and CI/CD workflows? What does a green checkmark or red X mean on my Pull Request?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="teamwork" data-search="two developers open PRs edit same file race condition">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Teamwork &middot; Question 68</span>
+        <h4>What happens if two developers open PRs at the same time that edit the same file?</h4>
+        <p>Whichever PR merges first succeeds; the second PR gets marked 'Out of date' and must rebase/merge main to resolve conflicts.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What happens when two developers open PRs that edit the same file? Which PR gets merged first?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="teamwork" data-search="small PR vs giant PR 2000 lines code review velocity">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Teamwork &middot; Question 69</span>
+        <h4>Why is submitting a small 50-line PR 10x better than submitting a giant 2,000-line PR?</h4>
+        <p>The developer rule: "10 lines of code = 10 issues found. 1,000 lines of code = LGTM, looks good to me!"</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why are small Pull Requests reviewed faster and merged safer than massive multi-file PRs?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="teamwork" data-search="Closes #42 Fixes #12 auto close issue github PR">
+        <span class="pill started" style="margin-bottom:.4rem;display:inline-block">Teamwork &middot; Question 70</span>
+        <h4>How do I write "Closes #42" in my PR description so GitHub automatically closes the issue?</h4>
+        <p>Explain GitHub closing keywords (`Closes`, `Fixes`, `Resolves`) that link PR merges to issue tracking.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do GitHub issue linking keywords like 'Closes #42' or 'Fixes #10' automatically close issues on PR merge?">Copy Question 📋</button>
+      </div>
+
+
+      <!-- CATEGORY 8: FIXING MISTAKES (71-80) -->
+      <div class="gloss-item q-card" data-cat="fixes" data-search="unstage all files at once git restore staged dot reset">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Fixes &middot; Question 71</span>
+        <h4>How do I un-stage ALL files at once without losing any of my code edits?</h4>
+        <p>How `git restore --staged .` or `git reset` clears the staging index cleanly while leaving disk files modified.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I unstage all files at once in Git without losing my local working directory code edits?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="fixes" data-search="reset soft mixed hard difference git reset HEAD~1">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Fixes &middot; Question 72</span>
+        <h4>What is the exact difference between `git reset --soft`, `--mixed`, and `--hard`?</h4>
+        <p>Break down `--soft` (keeps staged), `--mixed` (default, keeps unstaged), and `--hard` (discards edits to reflog).</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is the difference between git reset --soft, --mixed, and --hard when rewinding commits?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="fixes" data-search="abort merge git merge --abort cancel conflict emergency">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Fixes &middot; Question 73</span>
+        <h4>I am in the middle of a messy merge conflict and want to bail out. How do I abort?</h4>
+        <p>How `git merge --abort` immediately cancels the merge and restores your repository to pre-merge state!</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="I am stuck in a bad merge conflict. How do I run git merge --abort to safely cancel and return to normal?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="fixes" data-search="abort rebase git rebase --abort cancel rebase conflict emergency">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Fixes &middot; Question 74</span>
+        <h4>How do I abort a rebase that got way too complicated with repeating conflicts?</h4>
+        <p>How `git rebase --abort` cancels the rebase sequence and restores your original branch commits unharmed.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I run git rebase --abort to safely stop an interactive rebase and restore my branch?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="fixes" data-search="rename branch git branch -m typo local branch">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Fixes &middot; Question 75</span>
+        <h4>How do I rename my local branch if I made a typo in the branch name?</h4>
+        <p>How `git branch -m new-name` renames your currently checked-out branch instantly.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I rename a local Git branch if I made a typo using git branch -m?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="fixes" data-search="committed to main by mistake move commit to feature branch">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Fixes &middot; Question 76</span>
+        <h4>I accidentally committed code directly to `main`. How do I move that commit to a new feature branch?</h4>
+        <p>The 3-step magic trick: `git branch feature-branch` ➔ `git reset --hard HEAD~1` ➔ `git checkout feature-branch`!</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="I accidentally committed code to main instead of a feature branch. How do I move my commit to a new branch?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="fixes" data-search="delete remote branch git push origin --delete github">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Fixes &middot; Question 77</span>
+        <h4>How do I delete a remote feature branch on GitHub after my PR is merged?</h4>
+        <p>How `git push origin --delete feature-branch` removes stale feature branches from the remote server.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I delete a remote branch on GitHub using git push origin --delete <branch-name>?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="fixes" data-search="git clean -fd untracked files remove preview -n">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Fixes &middot; Question 78</span>
+        <h4>What is `git clean -fd` and will it delete untracked files permanently?</h4>
+        <p>Why `git clean -fd` permanently removes untracked files/folders on disk, and why you should run `git clean -n` first to dry-run!</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What does git clean -fd do? Why should I run git clean -n first to preview files before deleting?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="fixes" data-search="git blame who edited line author commit file">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Fixes &middot; Question 79</span>
+        <h4>How do I see who wrote or modified a specific line of code using `git blame`?</h4>
+        <p>How `git blame <file>` displays author names, commit SHAs, and timestamps for every single line in a file.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How does git blame <file> work to inspect author names and commit SHAs line-by-line?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="fixes" data-search="git bisect binary search bug find broken commit">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Fixes &middot; Question 80</span>
+        <h4>What is `git bisect` and how does binary search find the exact commit that introduced a bug?</h4>
+        <p>How `git bisect` automatically tests historical commits to pinpoint the exact commit where a regression started.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is git bisect and how does it use binary search to locate the exact commit that introduced a bug?">Copy Question 📋</button>
+      </div>
+
+
+      <!-- CATEGORY 9: TAGS & RELEASE TOOLS (81-90) -->
+      <div class="gloss-item q-card" data-cat="pro" data-search="git tag vs branch release version v1.0.0">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">Release &middot; Question 81</span>
+        <h4>What is a Git Tag and how does it differ from a Git Branch?</h4>
+        <p>Why tags are permanent immutably frozen release labels (e.g. `v1.0.0`), whereas branch pointers move forward with commits.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is a Git Tag (e.g. v1.0.0) and how does a tag differ from a branch in Git?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="pro" data-search="release version v1.0.0 create tag github release assets">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">Release &middot; Question 82</span>
+        <h4>How do official release versions like `v1.0.0` get published on GitHub?</h4>
+        <p>How `git tag -a v1.0.0 -m "Release"` ➔ `git push origin v1.0.0` triggers GitHub Releases with downloadable binaries.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do developers create release tags like v1.0.0 and publish official Releases on GitHub?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="pro" data-search="git submodule nested repo subfolder external project">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">Release &middot; Question 83</span>
+        <h4>What is a Git Submodule and when should projects embed sub-repositories?</h4>
+        <p>How `git submodule add` lets you embed another Git repository as a subdirectory inside your project.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is a Git Submodule? When should a project embed another repository as a submodule?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="pro" data-search="git archive export clean zip without .git folder">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">Release &middot; Question 84</span>
+        <h4>How do I export a clean `.zip` archive of my code without the `.git` history folder?</h4>
+        <p>How `git archive --format=zip HEAD > project.zip` packages a lightweight distribution zip file.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I use git archive to export a clean zip file of my project without the hidden .git directory?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="pro" data-search="cherry-pick vs merge when single commit apply sha">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">Release &middot; Question 85</span>
+        <h4>Why is `git cherry-pick` used for hotfixes instead of merging the entire feature branch?</h4>
+        <p>When production needs a single urgent bugfix commit from a dev branch without pulling unreleased features.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why use git cherry-pick for production hotfixes instead of merging an entire unreleased development branch?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="pro" data-search="bare repository git init --bare server no worktree">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">Release &middot; Question 86</span>
+        <h4>What is a 'bare repository' (`git init --bare`) and why are server repos bare?</h4>
+        <p>Why central servers (like GitHub) store bare repositories with no working directory files to accept pushes safely.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is a bare Git repository (git init --bare)? Why do remote servers like GitHub use bare repositories?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="pro" data-search="git diff HEAD~1 compare commit history parents">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">Release &middot; Question 87</span>
+        <h4>What does `HEAD~1` mean and how do I compare my current branch against 3 commits ago?</h4>
+        <p>Explain relative commit specifiers: `HEAD~1` (1 parent ago), `HEAD~3` (3 commits ago), `HEAD^` (first parent).</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What do HEAD~1 and HEAD~3 mean in Git? How do relative revision specifiers work?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="pro" data-search="git log pager less press Q to quit terminal stuck colon">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">Release &middot; Question 88</span>
+        <h4>Why does `git log` show a colon `:` and get stuck in terminal, and how do I quit?</h4>
+        <p>Explain terminal pagers (`less`): press <kbd>Q</kbd> to quit pager, or use `spacebar` to scroll down!</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="Why does git log get stuck with a colon prompt in terminal? How do I quit less pager by pressing Q?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="pro" data-search=".gitattributes binary files line endings diff filter">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">Release &middot; Question 89</span>
+        <h4>What is `.gitattributes` and how does it manage binary files and line endings?</h4>
+        <p>How `.gitattributes` configures custom diff filters, binary file flags, and explicit line ending behavior per file extension.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is a .gitattributes file and how does it configure line endings and binary file handling in Git?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="pro" data-search="Git LFS Large File Storage 500MB video binary assets">
+        <span class="pill" style="color:var(--accent);border-color:var(--accent-line);margin-bottom:.4rem;display:inline-block">Release &middot; Question 90</span>
+        <h4>What is Git LFS (Large File Storage) and why shouldn't I commit 500MB video files?</h4>
+        <p>Why Git repository size explodes with large binaries and how Git LFS replaces heavy files with lightweight text pointers.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is Git LFS (Large File Storage)? Why shouldn't heavy binary files like videos be committed directly to Git?">Copy Question 📋</button>
+      </div>
+
+
+      <!-- CATEGORY 10: CAREER & MASTERY (91-100) -->
+      <div class="gloss-item q-card" data-cat="career" data-search="github green square grid contribution resume recruiter portfolio">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Career &middot; Question 91</span>
+        <h4>How does having a green GitHub contribution grid help my developer resume?</h4>
+        <p>Why consistent open-source contribution graphs demonstrate active coding habits to tech recruiters and hiring managers.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How does a consistent GitHub contribution graph help my developer portfolio and job applications?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="career" data-search="open source portfolio README pin repositories profile">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Career &middot; Question 92</span>
+        <h4>How should I structure my GitHub profile and pinned repositories to stand out?</h4>
+        <p>Best practices for profile READMEs, pinned projects with live demo links, clean commit histories, and descriptive titles.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How should I format my GitHub profile README and pinned projects to stand out to employers?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="career" data-search="Git CLI vs VS Code Git GUI vs GitHub Desktop pros cons">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Career &middot; Question 93</span>
+        <h4>What is the difference between Git CLI, VS Code Git GUI, and GitHub Desktop?</h4>
+        <p>Why understanding command line Git gives you deep mastery, while GUIs speed up visual diff inspections.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What are the pros and cons of using Git Command Line (CLI) versus GUI apps like VS Code or GitHub Desktop?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="career" data-search="AI tools Copilot Antigravity Git workflow integration">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Career &middot; Question 94</span>
+        <h4>How do modern AI tools like GitHub Copilot or Antigravity interact with Git workflows?</h4>
+        <p>How AI assistants generate commit messages, summarize PR diffs, and help resolve complex rebase conflicts.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do AI coding assistants interact with Git workflows to generate commit messages and summarize PRs?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="career" data-search="Git Hooks pre-commit pre-push husky lint format code">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Career &middot; Question 95</span>
+        <h4>What are Git Hooks (`pre-commit`, `pre-push`) and how do they format code automatically?</h4>
+        <p>How scripts inside `.git/hooks` auto-format code (Prettier) and run linters before allowing a commit or push.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What are Git Hooks (like pre-commit or pre-push)? How do tools like Husky automate linting before commits?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="career" data-search="GPG signed commits verified badge security enterprise">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Career &middot; Question 96</span>
+        <h4>Why do tech companies require GPG signed commits with a 'Verified' badge on GitHub?</h4>
+        <p>How GPG cryptographic signatures prove that a commit was genuinely created by you and not spoofed by someone else.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What are GPG signed commits on GitHub and why do enterprise companies require 'Verified' badges?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="career" data-search="two github accounts work personal same laptop config">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Career &middot; Question 97</span>
+        <h4>How do I manage two GitHub accounts (work vs personal) on the same computer?</h4>
+        <p>Configuring `~/.gitconfig` includeIf directives and separate SSH key identities (`id_ed25519_work`).</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="How do I configure Git to handle separate work and personal GitHub accounts on the same laptop?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="career" data-search="Semantic Versioning SemVer major minor patch v1.2.3">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Career &middot; Question 98</span>
+        <h4>What is Semantic Versioning (SemVer) `v1.2.3` and how does it relate to Git releases?</h4>
+        <p>Break down Major (breaking changes), Minor (new features), and Patch (bug fixes) version numbers.</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is Semantic Versioning (SemVer MAJOR.MINOR.PATCH) and how does it govern software releases?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="career" data-search="repo corrupted weird state clone fresh copy nuclear option">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Career &middot; Question 99</span>
+        <h4>What should I do if my local repository gets completely corrupted or in a weird state?</h4>
+        <p>The developer secret: Stash or copy your modified files, re-clone a fresh copy from GitHub, and copy your edits back!</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What should I do if my local Git repository gets into a corrupted state? How do I cleanly re-clone and recover?">Copy Question 📋</button>
+      </div>
+
+      <div class="gloss-item q-card" data-cat="career" data-search="mindset shift transition beginner to git ninja master confidence">
+        <span class="pill done" style="margin-bottom:.4rem;display:inline-block">Career &middot; Question 100</span>
+        <h4>What is the ultimate mindset shift to transition from Git beginner to Git Ninja Master?</h4>
+        <p>Realizing that Git is a directed acyclic graph (DAG) of immutable snapshots where nothing is lost and every state is recoverable!</p>
+        <button type="button" class="copy-btn" style="margin-top:.6rem" data-copy="What is the ultimate mindset shift to transition from a nervous Git beginner to a confident Git Ninja Master?">Copy Question 📋</button>
+      </div>
+
+    </div>
+
+    <div id="no-ai-results" class="no-results" style="display:none">
+      <p>No matching questions found for "<span id="no-ai-query"></span>". Try another search term or select <b>All 100 Questions</b>.</p>
+    </div>
+
+  </section>
+
+  <footer class="site">
+    <span>Git-Fast-Learning &middot; What to Ask AI</span>
+    <span><a href="index.html">back to the map</a> &middot; <a href="level-1-basics.html">start level 1</a></span>
+  </footer>
+
+</main>
+
+<script src="js/progress.js"></script>
+<script>
+(function () {
+  Progress.mountBar('ask-ai');
+
+  var searchInput = document.getElementById('ai-search');
+  var filterBtns = document.querySelectorAll('#ai-filters .filter-btn');
+  var qCards = document.querySelectorAll('.q-card');
+  var noResults = document.getElementById('no-ai-results');
+  var noQuery = document.getElementById('no-ai-query');
+
+  var currentCat = 'all';
+
+  function filterQuestions() {
+    var q = searchInput.value.toLowerCase().trim();
+    var matchCount = 0;
+
+    qCards.forEach(function (card) {
+      var cat = card.getAttribute('data-cat');
+      var searchData = (card.getAttribute('data-search') || '') + ' ' + card.innerText;
+      searchData = searchData.toLowerCase();
+
+      var catMatch = (currentCat === 'all' || cat === currentCat);
+      var queryMatch = (!q || searchData.indexOf(q) > -1);
+
+      if (catMatch && queryMatch) {
+        card.style.display = '';
+        matchCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (matchCount === 0) {
+      noResults.style.display = 'block';
+      noQuery.textContent = searchInput.value;
+    } else {
+      noResults.style.display = 'none';
+    }
+  }
+
+  searchInput.addEventListener('input', filterQuestions);
+
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentCat = btn.getAttribute('data-cat');
+      filterQuestions();
+    });
+  });
+
+  // Copy Question handling
+  document.querySelectorAll('.copy-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          Progress.toast('Copied prompt: <code>' + text.slice(0, 30) + '...</code>');
+        });
+      } else {
+        var input = document.createElement('textarea');
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        document.body.removeChild(input);
+        Progress.toast('Copied prompt: <code>' + text.slice(0, 30) + '...</code>');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
