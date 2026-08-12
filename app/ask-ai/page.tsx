@@ -80,7 +80,7 @@ export default function AskAIPage() {
             100 Questions Humans Ask While Learning Git
           </h1>
           <p className="text-sm text-slate-600 dark:text-slate-300 max-w-xl mx-auto">
-            Click <b>Copy Question 📋</b> on any question below to copy it directly into ChatGPT, Claude, or Gemini!
+            Click <b>Copy Question 📋</b> on any question below to copy it directly into your AI tutor!
           </p>
         </div>
 

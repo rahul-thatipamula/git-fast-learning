@@ -42,7 +42,7 @@
 ## 🛠️ Technology Stack
 
 - **Frontend**: HTML5, Vanilla JavaScript (ES6+ Modules & OOP)
-- **Styling**: Tailwind CSS + Custom Extended Design System Tokens (Apple Glassmorphism + Anthropic Palette)
+- **Styling**: Tailwind CSS + Custom Extended Design System Tokens (Modern Glassmorphism & Palette)
 - **Simulation**: In-memory Git Repository Graph Simulator (`js/git-engine.js`)
 - **Persistence**: Browser `localStorage` for offline progress tracking and XP gamification
 

@@ -207,7 +207,7 @@ export default function LevelPage() {
                 🤖 Ask AI Tutor Helper
               </span>
               <p className="text-[11px] mb-2 leading-relaxed">
-                Confused by any concept? Copy questions directly into ChatGPT or Claude:
+                Confused by any concept? Copy questions directly into your AI tutor:
               </p>
               <div className="flex flex-wrap gap-1.5">
                 <button
