@@ -49,20 +49,20 @@
         <div class="story-card active-step">
           <div class="story-step-head">
             <span class="story-step-tag">Chapter 1 &middot; Day 1</span>
-            <span class="story-step-title">Creating the Project &amp; Initializing Git</span>
+            <span class="story-step-title">Creating the Project &amp; Turning On Git</span>
           </div>
           <p class="story-narrative-p">
-            You open your terminal to start a brand new project. You create a folder <code>my-app</code> and run <code>git init</code>. Git creates a hidden <code>.git</code> directory inside your folder. This hidden folder is Git's brain — it stores every snapshot, commit pointer, and branch configuration locally on your computer.
+            <b>Beginner Mental Model:</b> Imagine turning on a security camera inside your project folder! You open your terminal, create a folder named <code>my-app</code>, and type <code>git init</code>. Git creates a hidden <code>.git</code> folder inside your directory. This hidden folder is Git's brain — it stores every snapshot and change locally on your laptop without sending anything to the internet.
           </p>
           <div class="story-code-box">
             <span class="cmt"># Create project folder and step inside</span>
             <span class="cmd">mkdir my-app &amp;&amp; cd my-app</span>
-            <span class="cmt"># Initialize Git repository</span>
+            <span class="cmt"># Turn on Git tracking in this folder</span>
             <span class="cmd">git init</span>
           </div>
           <div class="cat-speech-bubble" style="background:var(--accent-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--accent-line)">
             <span class="cat-name" style="font-size:11px">Git Cat Tip 🐱</span>
-            <p style="font-size:12px;margin:0">Running <code>git init</code> turns a plain directory into a Git repository. Everything remains 100% local on your hard drive!</p>
+            <p style="font-size:12px;margin:0">Running <code>git init</code> turns a plain folder into an intelligent Git repository. Everything stays 100% private on your laptop hard drive!</p>
           </div>
         </div>
       </div>
@@ -73,22 +73,22 @@
         <div class="story-card">
           <div class="story-step-head">
             <span class="story-step-tag">Chapter 2 &middot; Staging</span>
-            <span class="story-step-title">Creating Files &amp; The 3-State Staging Pipeline</span>
+            <span class="story-step-title">Creating Files &amp; The Photo Snapshot Analogy</span>
           </div>
           <p class="story-narrative-p">
-            You write code in <code>README.md</code> and <code>notes.md</code>. When you type <code>git status</code>, Git highlights these files in red as <b>UNTRACKED</b>. To include them in your next snapshot, you run <code>git add .</code> to stage them into the Index. Finally, you run <code>git commit -m "Initial commit"</code> to permanently freeze your first snapshot in history!
+            <b>Beginner Photo Analogy:</b> Imagine taking a group photo! <br/>1. <b>Working Directory:</b> People walking around (untracked/modified files in red). <br/>2. <b>Staging Area (<code>git add .</code>):</b> Asking people to stand in front of the camera lens ready for the shot (staged files in green). <br/>3. <b>Repository Commit (<code>git commit</code>):</b> Clicking the shutter button! Your snapshot is permanently saved in history.
           </p>
           <div class="story-code-box">
-            <span class="cmt"># Check working tree status</span>
+            <span class="cmt"># Check who is walking around (file status)</span>
             <span class="cmd">git status</span>
-            <span class="cmt"># Stage all modified and untracked files</span>
+            <span class="cmt"># Line up all changes in front of camera lens (staging)</span>
             <span class="cmd">git add .</span>
-            <span class="cmt"># Freeze staged changes as a permanent snapshot commit</span>
-            <span class="cmd">git commit -m "Initial project structure"</span>
+            <span class="cmt"># Click the shutter button to save photo (commit)</span>
+            <span class="cmd">git commit -m "Initial project snapshot"</span>
           </div>
           <div class="cat-speech-bubble" style="background:var(--ok-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--ok)">
             <span class="cat-name" style="font-size:11px;color:var(--ok)">Staging Pipeline ⚡</span>
-            <p style="font-size:12px;margin:0"><b>Working Directory</b> ➔ <code>git add</code> ➔ <b>Staging Area (Index)</b> ➔ <code>git commit</code> ➔ <b>Repository Graph</b>.</p>
+            <p style="font-size:12px;margin:0"><b>Working Directory</b> ➔ <code>git add</code> ➔ <b>Staging Area</b> ➔ <code>git commit</code> ➔ <b>Permanent Snapshot Graph</b>.</p>
           </div>
         </div>
       </div>
@@ -99,20 +99,20 @@
         <div class="story-card">
           <div class="story-step-head">
             <span class="story-step-tag">Chapter 3 &middot; Branching</span>
-            <span class="story-step-title">Feature Isolation with Lightweight Branches</span>
+            <span class="story-step-title">Feature Isolation — Working in a Parallel Universe</span>
           </div>
           <p class="story-narrative-p">
-            You need to build a new login feature. Instead of risking breaking your stable <code>main</code> branch, you run <code>git checkout -b feature-login</code>. In Git, a branch is not a full directory copy — it is simply a 40-character pointer pointing to your current commit! You make changes, test freely, and commit safely without affecting <code>main</code>.
+            <b>Beginner Sandbox Analogy:</b> Want to build a new feature without risking breaking your working code? In Git, you create a <i>branch</i>! Typing <code>git checkout -b feature-login</code> creates a parallel universe where you can experiment, make mistakes, and commit freely. Your working <code>main</code> branch stays completely safe!
           </p>
           <div class="story-code-box">
-            <span class="cmt"># Create new branch and switch HEAD pointer to it</span>
+            <span class="cmt"># Create and switch to an isolated sandbox branch</span>
             <span class="cmd">git checkout -b feature-login</span>
-            <span class="cmt"># Commit changes isolated on the branch</span>
+            <span class="cmt"># Save changes safely inside the branch</span>
             <span class="cmd">git commit -m "Build user login form"</span>
           </div>
           <div class="cat-speech-bubble" style="background:var(--accent-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--accent-line)">
             <span class="cat-name" style="font-size:11px">HEAD Pointer 📍</span>
-            <p style="font-size:12px;margin:0"><code>HEAD</code> points to the branch you are currently standing on. Switching branches moves <code>HEAD</code> and updates your working disk files instantly.</p>
+            <p style="font-size:12px;margin:0">In Git, a branch is not a huge folder copy — it is a lightweight 40-character pointer! Switching branches swaps your disk files instantly.</p>
           </div>
         </div>
       </div>
@@ -123,17 +123,17 @@
         <div class="story-card">
           <div class="story-step-head">
             <span class="story-step-tag">Chapter 4 &middot; Collaboration</span>
-            <span class="story-step-title">Multi-Developer Sync &amp; GitHub Remotes</span>
+            <span class="story-step-title">Syncing Team Work — The 3-Copy Model</span>
           </div>
           <p class="story-narrative-p">
-            Your project goes open-source on GitHub! You publish your feature branch using <code>git push -u origin feature-login</code> and open a Pull Request. Meanwhile, another developer merges code into the canonical <code>upstream/main</code> repo. To update your local machine safely, you run <code>git fetch upstream</code> and <code>git merge --ff-only upstream/main</code>.
+            <b>Beginner Cloud Analogy:</b> When working with a team, 3 copies of the code exist: <br/>1. <b>Upstream:</b> The official project owned by the lead maintainer. <br/>2. <b>Origin:</b> Your personal online GitHub copy (fork). <br/>3. <b>Local:</b> Your laptop. <br/>You run <code>git fetch upstream</code> to download new team commits, and <code>git push origin</code> to upload your finished feature!
           </p>
           <div class="story-code-box">
-            <span class="cmt"># Push branch to your GitHub fork</span>
+            <span class="cmt"># Upload feature branch to your online GitHub fork</span>
             <span class="cmd">git push -u origin feature-login</span>
-            <span class="cmt"># Fetch latest commits from upstream maintainer</span>
+            <span class="cmt"># Download latest team updates from official project</span>
             <span class="cmd">git fetch upstream</span>
-            <span class="cmt"># Safely fast-forward local main</span>
+            <span class="cmt"># Fast-forward your local main branch safely</span>
             <span class="cmd">git merge --ff-only upstream/main</span>
           </div>
           <div class="cat-speech-bubble" style="background:var(--accent-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--accent-line)">
@@ -149,22 +149,22 @@
         <div class="story-card">
           <div class="story-step-head">
             <span class="story-step-tag">Chapter 5 &middot; Conflicts</span>
-            <span class="story-step-title">Facing &amp; Resolving Merge Conflicts</span>
+            <span class="story-step-title">Merge Conflicts — When Git Asks a Human for Help</span>
           </div>
           <p class="story-narrative-p">
-            A teammate edited the exact same line in <code>config.json</code> that you modified on your branch. When you attempt <code>git merge feature-login</code>, Git stops and warns: <code>Merge conflict in config.json</code>. Git places conflict markers in your file: <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. You open the file, delete the conflict markers, keep the combined correct code, stage with <code>git add config.json</code>, and run <code>git commit</code> to seal the 2-parent merge!
+            <b>Beginner Conflict Analogy:</b> A merge conflict happens when two developers edit the exact same line of code. Git doesn't guess who is right — it stops and places markers in the file: <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>. You open the file, delete the marker lines, keep the best code, and run <code>git add</code> + <code>git commit</code>!
           </p>
           <div class="story-code-box">
-            <span class="cmt"># Attempt merge — conflict occurs</span>
+            <span class="cmt"># Attempt to merge branch — Git pauses for conflict</span>
             <span class="cmd">git merge feature-login</span>
             <span class="cmt"># Open file, remove &lt;&lt;&lt;&lt;&lt;&lt;&lt; markers, stage resolved file</span>
             <span class="cmd">git add config.json</span>
-            <span class="cmt"># Complete merge commit</span>
+            <span class="cmt"># Complete the merge commit snapshot</span>
             <span class="cmd">git commit</span>
           </div>
           <div class="cat-speech-bubble" style="background:var(--warn-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--warn)">
             <span class="cat-name" style="font-size:11px;color:var(--warn)">No Need to Panic! 🛠️</span>
-            <p style="font-size:12px;margin:0">Merge conflicts are simply Git asking a human to decide between two conflicting edits. If you ever feel lost, run <code>git merge --abort</code> to reset!</p>
+            <p style="font-size:12px;margin:0">Merge conflicts are normal! Git is simply asking a human to decide between two edits. If you get confused, run <code>git merge --abort</code> to reset!</p>
           </div>
         </div>
       </div>
@@ -175,17 +175,15 @@
         <div class="story-card">
           <div class="story-step-head">
             <span class="story-step-tag">Chapter 6 &middot; Rescue</span>
-            <span class="story-step-title">Stashing, Rebasing &amp; Reflog Rescues</span>
+            <span class="story-step-title">Emergency Rescues — The Reflog Time Machine</span>
           </div>
           <p class="story-narrative-p">
-            When an urgent bug report arrives while your working tree has uncommitted edits, you run <code>git stash</code> to temporarily shelve your changes, fix the bug, and run <code>git stash pop</code> to restore your work. Later, if you accidentally run <code>git reset --hard</code> and a commit disappears from <code>git log</code>, you run <code>git reflog</code> to find its SHA, and run <code>git checkout -b rescue &lt;sha&gt;</code> to bring your lost commit back to life!
+            <b>Beginner Time Machine Analogy:</b> What if you accidentally delete a commit or run <code>git reset --hard</code>? Don't panic! Git records every single step you take in a flight recorder called <code>git reflog</code>. You open <code>git reflog</code>, find the SHA code of your deleted work, and run <code>git checkout -b rescue &lt;sha&gt;</code> to bring it back to life!
           </p>
           <div class="story-code-box">
-            <span class="cmt"># Temporarily shelf uncommitted work</span>
-            <span class="cmd">git stash &amp;&amp; git stash pop</span>
-            <span class="cmt"># View HEAD movement log to locate "lost" commit SHA</span>
+            <span class="cmt"># Open Git's black box flight recorder log</span>
             <span class="cmd">git reflog</span>
-            <span class="cmt"># Rescue lost commit by pointing a new branch at its SHA</span>
+            <span class="cmt"># Recover lost commit onto a new rescue branch</span>
             <span class="cmd">git checkout -b rescue a1b2c3d</span>
           </div>
           <div class="cat-speech-bubble" style="background:var(--ok-soft);padding:.6rem .85rem;border-radius:6px;border:1px solid var(--ok)">
