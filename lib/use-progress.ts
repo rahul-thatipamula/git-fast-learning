@@ -62,8 +62,8 @@ export function useProgress() {
   };
 
   const toggleTheme = () => {
-    const nextTheme = progress.theme === "light" ? "dark" : "light";
-    const nextState = { ...progress, theme: nextTheme };
+    const nextTheme: "light" | "dark" = progress.theme === "light" ? "dark" : "light";
+    const nextState: ProgressState = { ...progress, theme: nextTheme };
     setProgress(nextState);
     saveProgress(nextState);
     document.documentElement.setAttribute("data-theme", nextTheme);
