@@ -70,4 +70,4 @@ No build tools, node packages, or server installation required! Everything runs 
 
 ## 📄 License
 
-MIT License &copy; 2026 Rahul Thatipam. Free for educational and open-source use.
+MIT License &copy; 2026 Rahul Thatipamula. Free for educational and open-source use.
